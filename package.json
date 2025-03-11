@@ -27,9 +27,5 @@
     "gulp-sass": "^4.0.2",
     "gulp-uglify": "^3.0.2",
     "gulp-wait": "0.0.2"
-  },
-  "dependencies": {
-    "three": "^0.173.0",
-    "threejs-toys": "^0.0.8"
   }
 }

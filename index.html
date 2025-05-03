@@ -12,9 +12,139 @@
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+        .typewriter-text {
+            font-size: 2.5em;
+            color: #fff;
+            text-align: center;
+            margin-top: 15px;
+            min-height: 1.5em;
+            font-weight: 300;
+        }
+        .typewriter-text span {
+            border-right: 2px solid #fff;
+            animation: blink 0.75s step-end infinite;
+        }
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: #fff; }
+        }
+        /* Responsive adjustments */
+        @media screen and (max-width: 768px) {
+            .typewriter-text {
+                font-size: 2em;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .typewriter-text {
+                font-size: 1.5em;
+            }
+        }
+
+        /* Dark mode toggle styles */
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle i {
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+
+        body.dark-mode header {
+            background-color: #2d2d2d;
+        }
+
+        body.dark-mode #menu {
+            background-color: #2d2d2d;
+        }
+
+        body.dark-mode .background-alt {
+            background-color: #2d2d2d;
+        }
+
+        body.dark-mode .project {
+            background-color: #2d2d2d;
+        }
+
+        body.dark-mode footer {
+            background-color: #2d2d2d;
+        }
+
+        body.dark-mode .theme-toggle i {
+            color: #fff;
+        }
+
+        /* Dark mode color overrides */
+        body.dark-mode h2.heading,
+        body.dark-mode h3,
+        body.dark-mode .vtimeline-content h3,
+        body.dark-mode .project-info h3,
+        body.dark-mode .education-block h3,
+        body.dark-mode .optional-section-block h3,
+        body.dark-mode .vtimeline-date {
+            color: #fff !important;
+        }
+
+        body.dark-mode .heading:after {
+            background: #fff;
+        }
+
+        body.dark-mode .education-block,
+        body.dark-mode .optional-section-block,
+        body.dark-mode .vtimeline-content {
+            border-color: #444;
+            background-color: #2d2d2d;
+        }
+
+        body.dark-mode #experience-timeline:before,
+        body.dark-mode #experience-timeline:after {
+            background: #fff;
+        }
+
+        body.dark-mode .vtimeline-icon {
+            background: #fff;
+        }
+
+        body.dark-mode .vtimeline-icon i {
+            color: #2d2d2d;
+        }
+
+        /* Mobile menu dark mode styles */
+        body.dark-mode #mobile-menu-close {
+            background: #2d2d2d;
+            color: #fff;
+        }
+
+        body.dark-mode #mobile-menu-close span {
+            color: #fff;
+        }
+    </style>
 </head>
 
 <body>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+        <i class="fa fa-moon-o" aria-hidden="true"></i>
+    </button>
     <div id="mobile-menu-open" class="shadow-large">
         <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
@@ -47,45 +177,18 @@
             </li>
         </ul>
     </header>
-    <!-- End header -->
-
-    <!-- <div id="lead">
-        <div id="lead-content">
-            <h1>Naman Jain</h1>
-            <h2>Software Engineer</h2>
-            <a href="https://tinyurl.com/jnaman20" target="_blank" class="btn-rounded-white">Download Resume</a>
-        </div> -->
-        <!-- End #lead-content -->
-
-       <!--  <div id="lead-overlay"></div> -->
-
-      <!--   <div id="lead-down"> -->
-            <!-- <span>
-                <i class="fa fa-chevron-down" aria-hidden="true"></i>
-            </span>
-        </div> -->
-        <!-- End #lead-down -->
-    <!-- </div> -->
-    <!-- End #lead -->
 
     <div id="app">
         <div id = "lead">
             <div id="lead-content">
                 <h1>Naman Jain</h1>
-<!--                 <h2>Software Engineer</h2> -->
-<!--                 <script>typeWriter()</script> -->
-                <p id="demo"></p>
-                <!-- <a href="https://tinyurl.com/jnaman20" target="_blank" class="btn-rounded-white">Download Resume</a> -->
+                <div class="typewriter-text" id="typewriter"></div>
             </div>
-                <!-- <div id="lead-overlay"></div> -->
-            <div id="lead-down">
+                  <div id="lead-down">
                 <span>
                     <i class="fa fa-chevron-down" aria-hidden="true"></i>
                 </span>
             </div>
-            <!-- </div>
-              <a target="_blank"></a>
-            </div> -->
         </div>
     </div>
     <div id="about">
@@ -111,8 +214,8 @@
                 <h3>Ingram Micro</h3>
                 <h4>Software Development Engineer</h4>
                     <p>Built a robust cost update module for Vendors with cloud products, leveraging Java and Spring framework, PostgreSQL DBMS and Google Cloud Platform for storage.
-                        Devised a bulk data export feature using Google Cloud’s BigQuery jobs and merge files using gsutil. 
-                        Streamlined collaboration by building an API log-book on Notion that stores project’s API curls, dev history and UI request type. Employed multi-threading techniques and asynchronous processing in the catalog ingestion process for vendors.
+                        Devised a bulk data export feature using Google Cloud's BigQuery jobs and merge files using gsutil. 
+                        Streamlined collaboration by building an API log-book on Notion that stores project's API curls, dev history and UI request type. Employed multi-threading techniques and asynchronous processing in the catalog ingestion process for vendors.
                     </p>
             </div>
 
@@ -128,7 +231,7 @@
                 <h3>MatSoc – The Materials Society, IIT Kanpur</h3>
                 <h4>Co-Founder & UG Convener</h4>
                 <p>Co-Founded a 600+ member Departmental Society to engage & promote MSE research & technology awareness. Headed a team of 20+ & organized Orientation, Farewell, 6 alumni talks & workshops, Research Scholars' Day.
-                    Formulated an annual structure of events, project proposals, society’s financial budgeting structure and rules.
+                    Formulated an annual structure of events, project proposals, society's financial budgeting structure and rules.
                 </p>
             </div>
 
@@ -294,6 +397,71 @@
 
 <!-- Plugin JavaScript -->
 <script src="./js/jquery.easing.min.js"></script>
+
+<script>
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+        themeIcon.classList.remove('fa-moon-o');
+        themeIcon.classList.add('fa-sun-o');
+    }
+
+    themeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        
+        // Toggle icon
+        if (document.body.classList.contains('dark-mode')) {
+            themeIcon.classList.remove('fa-moon-o');
+            themeIcon.classList.add('fa-sun-o');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            themeIcon.classList.remove('fa-sun-o');
+            themeIcon.classList.add('fa-moon-o');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // Typewriter effect code
+    const words = ['Software Engineer', 'Problem Solver', 'AI Enthusiast', 'Game Developer'];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typeDelay = 100;
+
+    function typeWriter() {
+        const currentWord = words[wordIndex];
+        const typewriterElement = document.getElementById('typewriter');
+        
+        if (isDeleting) {
+            typewriterElement.innerHTML = currentWord.substring(0, charIndex - 1) + '<span></span>';
+            charIndex--;
+            typeDelay = 50;
+        } else {
+            typewriterElement.innerHTML = currentWord.substring(0, charIndex + 1) + '<span></span>';
+            charIndex++;
+            typeDelay = 100;
+        }
+
+        if (!isDeleting && charIndex === currentWord.length) {
+            isDeleting = true;
+            typeDelay = 2000; // Pause at end of word
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            typeDelay = 500; // Pause before starting new word
+        }
+
+        setTimeout(typeWriter, typeDelay);
+    }
+
+    // Start the typewriter effect when the page loads
+    window.addEventListener('load', typeWriter);
+</script>
 
 </body>
 

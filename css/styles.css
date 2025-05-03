@@ -250,7 +250,6 @@ footer {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
   }
   #lead-content h1,
   #lead-content h2 {
@@ -275,19 +274,20 @@ footer {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     line-height: 0.9em;
+    text-align: center;
   }
   #lead-content h2 {
     color: #a0cfee;
     font-weight: 500;
     font-size: 2.25em;
     margin-bottom: 15px;
-    white-space: nowrap;
+    /* white-space: nowrap;
     overflow: hidden;
     animation: typewriter 2s steps(17) infinite alternate,
         blink 800ms steps(17) infinite normal;
-    border-right: 5px solid black;
+    border-right: 5px solid black; */
   }
-
+/* 
 @keyframes typewriter {
     from {
         width: 0%;
@@ -306,7 +306,7 @@ footer {
     to {
         border-color: transparent;
     }
-}
+} */
 /*   
   #app a {
     margin-top: 10px;

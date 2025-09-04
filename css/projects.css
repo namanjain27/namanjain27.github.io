@@ -1,0 +1,231 @@
+/* Projects Section Styling */
+
+/* Projects grid layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+    padding: 0 20px;
+}
+
+/* Responsive grid adjustments */
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 1200px;
+        margin: 30px auto 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 10px;
+    }
+}
+
+/* Project card styling */
+.project {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Project image styling */
+.project-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Project info styling */
+.project-info {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-info h3 {
+    margin: 0 0 15px 0;
+    font-size: 1.3em;
+    color: #333;
+    font-weight: 600;
+}
+
+.project-info p {
+    margin: 0 0 20px 0;
+    line-height: 1.6;
+    color: #666;
+    flex: 1;
+}
+
+/* Tech stack styling */
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0 20px 0;
+}
+
+.tech-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    color: #555;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+    background: var(--gradient-primary);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.tech-icon img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+}
+
+/* Project links styling */
+.project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.project-info a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    background: var(--gradient-primary);
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+.project-info a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+}
+
+.project-info a.secondary {
+    background: transparent;
+    color: var(--neon-purple) !important;
+    border: 2px solid var(--neon-purple);
+}
+
+.project-info a.secondary:hover {
+    background: var(--neon-purple);
+    color: white !important;
+}
+
+/* Dark mode project styling */
+body.dark-mode .project {
+    background: linear-gradient(135deg, var(--dark-secondary) 0%, #3d2a4d 100%);
+    border: 1px solid rgba(138, 43, 226, 0.3);
+    box-shadow: 0 8px 32px rgba(138, 43, 226, 0.1);
+}
+
+body.dark-mode .project:hover {
+    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.3);
+}
+
+body.dark-mode .project-info h3 {
+    color: #fff;
+}
+
+body.dark-mode .project-info p {
+    color: #ccc;
+}
+
+body.dark-mode .tech-icon {
+    background: rgba(45, 45, 45, 0.8);
+    color: #ccc;
+    border: 1px solid rgba(138, 43, 226, 0.3);
+}
+
+body.dark-mode .tech-icon:hover {
+    background: var(--gradient-primary);
+    color: white;
+}
+
+body.dark-mode .project-info a {
+    background: var(--gradient-primary);
+    color: white !important;
+}
+
+body.dark-mode .project-info a:hover {
+    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+}
+
+body.dark-mode .project-info a.secondary {
+    background: transparent;
+    color: var(--neon-purple) !important;
+    border: 2px solid var(--neon-purple);
+}
+
+body.dark-mode .project-info a.secondary:hover {
+    background: var(--neon-purple);
+    color: white !important;
+}
+
+/* Animation for project cards */
+.project.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.project.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Staggered animation delays for project cards */
+.project.fade-in:nth-child(1) { transition-delay: 0.1s; }
+.project.fade-in:nth-child(2) { transition-delay: 0.2s; }
+.project.fade-in:nth-child(3) { transition-delay: 0.3s; }
+.project.fade-in:nth-child(4) { transition-delay: 0.4s; }
+.project.fade-in:nth-child(5) { transition-delay: 0.5s; }
+.project.fade-in:nth-child(6) { transition-delay: 0.6s; }

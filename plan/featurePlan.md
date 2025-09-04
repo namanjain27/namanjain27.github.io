@@ -48,8 +48,7 @@
 
 ### 2.1 HTML Structure Update
 - Modify projects section HTML to support grid layout
-- Add placeholder project cards to reach 4-6 total projects
-- Update project data structure for new information
+- Add placeholder project cards to reach 4-6 total projects (which works like when there are <=4 projects then just 1 row of cards then new cards come on next row)
 
 ### 2.2 CSS Grid Implementation
 - Create responsive CSS Grid layout
@@ -58,10 +57,7 @@
 - Add tech stack icon styling
 
 ### 2.3 Project Content Enhancement
-- Add more project details and descriptions
-- Include tech stack icons/badges for each project
-- Implement project filtering if needed
-- Add project links and call-to-action buttons
+- Include tech stack icons/badges for each project (icons from website like https://icons8.com/icons/ might help; directly use via link)
 
 ## Phase 3: Contact & Social Integration
 

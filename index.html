@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/projects.css" rel="stylesheet">
     <style>
         :root {
             --neon-purple: #8A2BE2;
@@ -151,6 +152,7 @@
             }
         }
 
+
         /* Dark mode toggle styles */
         .theme-toggle {
             position: fixed;
@@ -203,11 +205,6 @@
                 radial-gradient(circle at 80% 20%, rgba(65, 105, 225, 0.2) 0%, transparent 50%);
         }
 
-        body.dark-mode .project {
-            background: linear-gradient(135deg, var(--dark-secondary) 0%, #3d2a4d 100%);
-            border: 1px solid rgba(138, 43, 226, 0.3);
-            box-shadow: 0 8px 32px rgba(138, 43, 226, 0.1);
-        }
 
         body.dark-mode footer {
             background: linear-gradient(135deg, var(--dark-secondary) 0%, #2a1a3d 100%);
@@ -341,21 +338,6 @@
             transform: translateX(0);
         }
 
-        /* Enhanced hover effects */
-        .project:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        body.dark-mode .project:hover {
-            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.3);
-        }
-
-        .project-image img:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
-        }
 
         /* Parallax effect for hero section */
         #lead {
@@ -416,32 +398,6 @@
             left: 100%;
         }
 
-        /* Proper project link styling */
-        .project-info a {
-            position: relative;
-            display: inline-block;
-            padding: 8px 16px;
-            background: var(--gradient-primary);
-            color: white !important;
-            text-decoration: none !important;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-
-        .project-info a:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
-        }
-
-        body.dark-mode .project-info a {
-            background: var(--gradient-primary);
-            color: white !important;
-        }
-
-        body.dark-mode .project-info a:hover {
-            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.6);
-        }
 
         /* Skills section hover effects */
         #skills li {
@@ -629,38 +585,206 @@
     <div id="projects" class="background-alt">
         <h2 class="heading fade-in">Projects</h2>
         <div class="container">
-            <div class="row">
-                <div class="project shadow-large fade-in">
+            <div class="projects-grid">
+                <div class="project fade-in">
                     <div class="project-image">
-                        <img src="images/Game_Cover_Scene1.jpg" style='height: 300px; width: 300px;object-fit: cover;'/>
+                        <img src="images/Game_Cover_Scene1.jpg" alt="Territorial Attack Game"/>
                     </div>
-                    <!-- End .project-image -->
                     <div class="project-info">
                         <h3>Territorial Attack – Android Game</h3>
+                        <div class="tech-stack">
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/unity.png" alt="Unity"/>
+                                Unity
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/c-sharp-logo.png" alt="C#"/>
+                                C#
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/android-os.png" alt="Android"/>
+                                Android
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/google-play.png" alt="Google Play"/>
+                                Google Play
+                            </span>
+                        </div>
                         <p>
-                            Lead programmer in a team of 6, in developing a projectile shooter 2D multi-player android game in C# using Unity engine. Integrated PUN for multiplayer setup & coded multiple functionalities across 12 levels using Unity Documentation & OOPs. Published game on Google Play Store with 800+ downloads.
+                            Lead programmer in a team of 6, developing a projectile shooter 2D multiplayer Android game. Integrated PUN for multiplayer setup & coded multiple functionalities across 12 levels. Published on Google Play Store with 800+ downloads.
                         </p>
-                        <a href="https://github.com/namanjain27/Territorial-Attack">View Project</a>
+                        <div class="project-links">
+                            <a href="https://github.com/namanjain27/Territorial-Attack">View Project</a>
+                            <a href="https://play.google.com/store/apps/details?id=com.DefaultCompany.TerritorialAttack" class="secondary">Play Store</a>
+                        </div>
                     </div>
-                    <!-- End .project-info -->
                 </div>
-                <!-- End .project -->
 
-                <div class="project shadow-large fade-in">
+                <div class="project fade-in">
                     <div class="project-image">
-                        <img src="images/robolin-tiles2.jpg"  style='height: 300px; width: 300px;object-fit: cover;' />
+                        <img src="images/robolin-tiles2.jpg" alt="Robot Line Detection AI"/>
                     </div>
-                    <!-- End .project-image -->
                     <div class="project-info">
                         <h3>Robo Line Detection AI</h3>
+                        <div class="tech-stack">
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/python.png" alt="Python"/>
+                                Python
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/opencv.png" alt="OpenCV"/>
+                                OpenCV
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/fluency/48/artificial-intelligence.png" alt="AI"/>
+                                Computer Vision
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/numpy.png" alt="NumPy"/>
+                                NumPy
+                            </span>
+                        </div>
                         <p>
-                            Developed a robust line detection algorithm for real-world environments that effectively detect border lines in noisy tile images. Implemented Gaussian Blur, contrast stretching, Canny edge detection algorithms to enhance & accurately detect border lines.
+                            Developed a robust line detection algorithm for real-world environments that effectively detects border lines in noisy tile images. Implemented Gaussian Blur, contrast stretching, and Canny edge detection algorithms.
                         </p>
-                        <a href="https://github.com/namanjain27/Robo-Line-detection-AI">View Project</a>
+                        <div class="project-links">
+                            <a href="https://github.com/namanjain27/Robo-Line-detection-AI">View Project</a>
+                        </div>
                     </div>
-                    <!-- End .project-info -->
                 </div>
-                <!-- End .project -->
+
+                <div class="project fade-in">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/8A2BE2/ffffff?text=Portfolio+Website" alt="Portfolio Website"/>
+                    </div>
+                    <div class="project-info">
+                        <h3>Interactive Portfolio Website</h3>
+                        <div class="tech-stack">
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/html-5.png" alt="HTML5"/>
+                                HTML5
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3"/>
+                                CSS3
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/javascript.png" alt="JavaScript"/>
+                                JavaScript
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/bootstrap.png" alt="Bootstrap"/>
+                                Bootstrap
+                            </span>
+                        </div>
+                        <p>
+                            Responsive portfolio website featuring dynamic typewriter effects, dark/light theme toggle, smooth scroll animations, and neon cursor effects. Built with modern web technologies and optimized for all devices.
+                        </p>
+                        <div class="project-links">
+                            <a href="https://github.com/namanjain27/namanjain27.github.io">View Source</a>
+                            <a href="https://namanjain27.github.io" class="secondary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project fade-in">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/4169E1/ffffff?text=Chatbot+AI" alt="AI Chatbot"/>
+                    </div>
+                    <div class="project-info">
+                        <h3>IP Management AI Chatbot</h3>
+                        <div class="tech-stack">
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/python.png" alt="Python"/>
+                                Python
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/fluency/48/azure-1.png" alt="Azure"/>
+                                Azure AI
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/microsoft.png" alt="Microsoft"/>
+                                Bot Framework
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/fluency/48/artificial-intelligence.png" alt="AI"/>
+                                NLP
+                            </span>
+                        </div>
+                        <p>
+                            Developed AI-powered chatbot for IP & patent management using Microsoft Bot Framework SDK and Azure Cognitive Services. Built QnA generator that extracts data from websites into structured datasets.
+                        </p>
+                        <div class="project-links">
+                            <a href="#">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project fade-in">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/FF1493/ffffff?text=ML+Research" alt="Machine Learning Research"/>
+                    </div>
+                    <div class="project-info">
+                        <h3>Titanium Alloy Creep Analysis</h3>
+                        <div class="tech-stack">
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/python.png" alt="Python"/>
+                                Python
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/fluency/48/machine-learning.png" alt="Machine Learning"/>
+                                ML
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/pandas.png" alt="Pandas"/>
+                                Pandas
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/numpy.png" alt="NumPy"/>
+                                NumPy
+                            </span>
+                        </div>
+                        <p>
+                            Generated creep curve plots for α-β Titanium (Ti-6 Al-4) high temperature alloys using mathematical models and ML techniques. Feature engineered variables through PCA and Pearson correlation analysis.
+                        </p>
+                        <div class="project-links">
+                            <a href="#">View Research</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project fade-in">
+                    <div class="project-image">
+                        <img src="https://via.placeholder.com/400x250/667eea/ffffff?text=Cost+Update+Module" alt="Cost Update Module"/>
+                    </div>
+                    <div class="project-info">
+                        <h3>Vendor Cost Update Module</h3>
+                        <div class="tech-stack">
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/java-coffee-cup-logo.png" alt="Java"/>
+                                Java
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/spring-logo.png" alt="Spring"/>
+                                Spring
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/postgreesql.png" alt="PostgreSQL"/>
+                                PostgreSQL
+                            </span>
+                            <span class="tech-icon">
+                                <img src="https://img.icons8.com/color/48/google-cloud.png" alt="GCP"/>
+                                GCP
+                            </span>
+                        </div>
+                        <p>
+                            Built robust cost update module for vendors with cloud products using Java Spring framework, PostgreSQL DBMS, and Google Cloud Platform. Implemented bulk data export feature using BigQuery jobs.
+                        </p>
+                        <div class="project-links">
+                            <a href="#">View Project</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

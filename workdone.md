@@ -31,3 +31,26 @@
 - Removed old project styling rules (.project, .project-image, .project-info) from css/styles.css that used absolute positioning and float layout
 - Cleaned up conflicting responsive rules that were hiding project images and altering layout
 - Maintained separation of concerns with dedicated projects.css for all project-related styling
+
+## Phase 3: Dark Mode Experience Tiles and Z-Index Fixes
+
+### Changes Made:
+- Reverted experience tiles dark mode styling to match education section styling for consistency
+- Enhanced experience tiles hover effects to use stronger shadow effects 
+- Ensured social widgets maintain consistent light mode appearance in dark mode across all screen sizes
+
+## Phase 4: Timeline Animations Implementation
+
+### Changes Made:
+- Added scroll-triggered animations for experience timeline section with smooth reveal effects
+- Implemented staggered animation delays (0.1s-0.6s) for timeline items to create sequential appearance
+- Created enhanced hover interactions for all timeline elements (icons, dates, content)
+- Added timeline line animation that scales from top to bottom when section comes into view
+- Implemented icon pulse animations and enhanced visual feedback on hover
+
+### Features Added (User Perspective):
+- **Smooth Timeline Reveals**: Timeline items now animate into view smoothly as user scrolls down
+- **Staggered Animations**: Each timeline item appears with a slight delay creating a flowing effect
+- **Interactive Timeline Icons**: Icons pulse with neon glow and react to hover with scale and rotation effects  
+- **Enhanced Hover Effects**: Dates change color and lift up, content slides right with shimmer effect
+- **Animated Timeline Line**: The vertical timeline line draws itself from top to bottom when visible

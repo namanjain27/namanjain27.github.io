@@ -329,6 +329,13 @@ footer {
   left: 0;
   z-index: 1;
   }
+  
+  /* Ensure neonCursor canvas stays behind other elements on larger screens */
+  @media (min-width: 993px) {
+    #app canvas {
+        z-index: 1 !important;
+    }
+  }
   body, html, #app {
     margin: 0;
     width: 100%;

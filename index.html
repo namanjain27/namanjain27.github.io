@@ -276,7 +276,14 @@
         }
 
         body.dark-mode .education-block,
-        body.dark-mode .optional-section-block,
+        body.dark-mode .optional-section-block {
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            background: linear-gradient(135deg, rgba(45, 45, 45, 0.9) 0%, rgba(61, 42, 77, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(138, 43, 226, 0.1);
+        }
+        
+        /* Experience tiles match education section styling */
         body.dark-mode .vtimeline-content {
             border: 1px solid rgba(138, 43, 226, 0.3);
             background: linear-gradient(135deg, rgba(45, 45, 45, 0.9) 0%, rgba(61, 42, 77, 0.9) 100%);
@@ -374,6 +381,11 @@
                 transform: translate(-50%, -50%) !important;
                 z-index: 10 !important;
             }
+            
+            /* Ensure social widget is visible on larger screens */
+            .floating-social-widget {
+                z-index: 15 !important;
+            }
         }
 
         @keyframes floatBackground {
@@ -418,18 +430,123 @@
             box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
         }
 
-        /* Timeline item animations */
+        /* Phase 4: Timeline Animations */
+        .vtimeline-point {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .vtimeline-point.animate-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Staggered animation delays for timeline items */
+        .vtimeline-point:nth-child(1) { transition-delay: 0.1s; }
+        .vtimeline-point:nth-child(2) { transition-delay: 0.2s; }
+        .vtimeline-point:nth-child(3) { transition-delay: 0.3s; }
+        .vtimeline-point:nth-child(4) { transition-delay: 0.4s; }
+        .vtimeline-point:nth-child(5) { transition-delay: 0.5s; }
+        .vtimeline-point:nth-child(6) { transition-delay: 0.6s; }
+
+        /* Timeline content smooth reveal */
         .vtimeline-content {
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            transform: translateX(0);
         }
 
         .vtimeline-content:hover {
-            transform: translateX(10px);
-            box-shadow: -5px 0 15px rgba(138, 43, 226, 0.2);
+            transform: translateX(15px);
+            box-shadow: -8px 0 20px rgba(138, 43, 226, 0.3);
         }
 
         body.dark-mode .vtimeline-content:hover {
-            box-shadow: -5px 0 15px rgba(138, 43, 226, 0.4);
+            box-shadow: -8px 0 25px rgba(138, 43, 226, 0.5);
+        }
+
+        /* Timeline icon animations */
+        .vtimeline-icon {
+            transform: scale(0.8);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .vtimeline-point.animate-in .vtimeline-icon {
+            transform: scale(1);
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes iconPulse {
+            0%, 100% { 
+                box-shadow: 0 0 0 0 rgba(138, 43, 226, 0.7);
+                transform: scale(1);
+            }
+            50% { 
+                box-shadow: 0 0 0 10px rgba(138, 43, 226, 0);
+                transform: scale(1.05);
+            }
+        }
+
+        /* Timeline line animation */
+        #experience-timeline:before {
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 1.2s ease-out;
+            transition-delay: 0.3s;
+        }
+
+        #experience-timeline.animate-timeline:before {
+            transform: scaleY(1);
+        }
+
+        /* Date animations */
+        .vtimeline-date {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .vtimeline-point.animate-in .vtimeline-date {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Enhanced hover interactions for timeline elements */
+        .vtimeline-point:hover .vtimeline-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+        }
+
+        .vtimeline-point:hover .vtimeline-date {
+            color: var(--neon-purple);
+            transform: translateY(-5px);
+            font-weight: 500;
+        }
+
+        body.dark-mode .vtimeline-point:hover .vtimeline-date {
+            color: var(--neon-purple);
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+        }
+
+        /* Timeline content enhanced animations */
+        .vtimeline-content {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vtimeline-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(138, 43, 226, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .vtimeline-content:hover::before {
+            left: 100%;
         }
 
         /* Theme toggle enhanced animation */
@@ -589,7 +706,32 @@
             }
         }
         
-        /* Dark mode styles for floating social widget - keep same as light mode */
+        /* Dark mode styles for floating social widget - maintain light mode appearance */
+        body.dark-mode .floating-social-widget {
+            /* Keep the same styling as light mode - no changes needed */
+        }
+        
+        body.dark-mode .social-icon-wrapper {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(138, 43, 226, 0.3);
+        }
+        
+        body.dark-mode .social-icon-wrapper:hover {
+            background: var(--gradient-primary);
+            border-color: rgba(138, 43, 226, 0.8);
+            box-shadow: 
+                0 8px 25px rgba(138, 43, 226, 0.4),
+                0 0 30px rgba(138, 43, 226, 0.2);
+        }
+        
+        body.dark-mode .social-icon-wrapper a {
+            color: #fff;
+        }
+        
+        body.dark-mode .social-icon-wrapper:hover a {
+            color: #fff;
+        }
         
         /* Mobile responsiveness */
         @media (max-width: 768px) {
@@ -660,9 +802,12 @@
             }
         }
         
-        body.dark-mode .floating-social-widget {
-            background: rgba(45, 45, 45, 0.9);
-            border-color: rgba(138, 43, 226, 0.5);
+        /* Mobile dark mode styling for floating social widget */
+        @media (max-width: 480px) {
+            body.dark-mode .floating-social-widget {
+                background: rgba(45, 45, 45, 0.9);
+                border-color: rgba(138, 43, 226, 0.5);
+            }
         }
         
         /* Enhanced Contact Form Styling */
@@ -1435,6 +1580,49 @@
 
     // Initialize scroll animations
     document.addEventListener('DOMContentLoaded', handleScrollAnimations);
+    
+    // Phase 4: Timeline Animations
+    function initTimelineAnimations() {
+        const timeline = document.getElementById('experience-timeline');
+        const timelinePoints = document.querySelectorAll('.vtimeline-point');
+        
+        if (!timeline || timelinePoints.length === 0) return;
+        
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        // Observer for timeline line
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-timeline');
+                }
+            });
+        }, observerOptions);
+        
+        // Observer for timeline points
+        const pointsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        // Observe timeline and points
+        timelineObserver.observe(timeline);
+        timelinePoints.forEach(point => {
+            pointsObserver.observe(point);
+        });
+    }
+    
+    // Initialize timeline animations
+    document.addEventListener('DOMContentLoaded', initTimelineAnimations);
     
     // Control social widget visibility based on hero section
     function handleSocialWidgetVisibility() {

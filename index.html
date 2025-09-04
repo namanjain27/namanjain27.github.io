@@ -13,6 +13,20 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <style>
+        :root {
+            --neon-purple: #8A2BE2;
+            --neon-blue: #4169E1;
+            --neon-pink: #FF1493;
+            --dark-bg: #1a1a1a;
+            --dark-secondary: #2d2d2d;
+            --light-bg: #f8f9fa;
+            --light-secondary: #e9ecef;
+            --gradient-primary: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
+            --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        
         .typewriter-text {
             font-size: 2.5em;
             color: #fff;
@@ -29,6 +43,102 @@
             from, to { border-color: transparent }
             50% { border-color: #fff; }
         }
+        
+        /* Classic and consistent section backgrounds */
+        #about {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+        }
+        
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(138, 43, 226, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(65, 105, 225, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .background-alt {
+            background: linear-gradient(135deg, #f1f3f4 0%, #dee2e6 100%) !important;
+            position: relative;
+        }
+        
+        .background-alt::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.04) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(65, 105, 225, 0.04) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        #education {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+        }
+        
+        #education::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 60% 40%, rgba(138, 43, 226, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        #skills {
+            background: linear-gradient(135deg, #f1f3f4 0%, #dee2e6 100%);
+            position: relative;
+        }
+        
+        #skills::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(circle at 40% 60%, rgba(65, 105, 225, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        /* Section dividers */
+        .section-divider {
+            height: 6px;
+            background: var(--gradient-primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-divider::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
         /* Responsive adjustments */
         @media screen and (max-width: 768px) {
             .typewriter-text {
@@ -64,37 +174,89 @@
             background: rgba(255, 255, 255, 0.1);
         }
 
-        /* Dark mode styles */
+        /* Enhanced Dark mode styles with purple theme */
         body.dark-mode {
-            background-color: #1a1a1a;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #2a1a3d 100%);
             color: #fff;
+            transition: all 0.3s ease;
         }
 
         body.dark-mode header {
-            background-color: #2d2d2d;
+            background-color: rgba(45, 45, 45, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--neon-purple);
         }
 
         body.dark-mode #menu {
-            background-color: #2d2d2d;
+            background: linear-gradient(135deg, rgba(45, 45, 45, 0.95) 0%, rgba(42, 26, 61, 0.95) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(138, 43, 226, 0.3);
         }
 
         body.dark-mode .background-alt {
-            background-color: #2d2d2d;
+            background: linear-gradient(135deg, #1e1e2e 0%, #2d1b3d 100%) !important;
+        }
+
+        body.dark-mode .background-alt::before {
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(65, 105, 225, 0.2) 0%, transparent 50%);
         }
 
         body.dark-mode .project {
-            background-color: #2d2d2d;
+            background: linear-gradient(135deg, var(--dark-secondary) 0%, #3d2a4d 100%);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            box-shadow: 0 8px 32px rgba(138, 43, 226, 0.1);
         }
 
         body.dark-mode footer {
-            background-color: #2d2d2d;
+            background: linear-gradient(135deg, var(--dark-secondary) 0%, #2a1a3d 100%);
+            border-top: 2px solid var(--neon-purple);
         }
 
         body.dark-mode .theme-toggle i {
-            color: #fff;
+            color: var(--neon-purple);
         }
 
-        /* Dark mode color overrides */
+        body.dark-mode .theme-toggle:hover {
+            background: rgba(138, 43, 226, 0.2);
+            transform: scale(1.1);
+        }
+
+        /* Dark mode section backgrounds */
+        body.dark-mode #about {
+            background: linear-gradient(135deg, #1e1e2e 0%, #2d1b3d 100%);
+        }
+
+        body.dark-mode #about::before {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(65, 105, 225, 0.15) 0%, transparent 50%);
+        }
+
+        body.dark-mode #education {
+            background: linear-gradient(135deg, #2a1a3d 0%, #1e1e2e 100%);
+        }
+
+        body.dark-mode #education::before {
+            background-image: 
+                radial-gradient(circle at 60% 40%, rgba(138, 43, 226, 0.15) 0%, transparent 50%);
+        }
+
+        body.dark-mode #skills {
+            background: linear-gradient(135deg, #1e1e2e 0%, #3d2a4d 100%);
+        }
+
+        body.dark-mode #skills::before {
+            background-image: 
+                radial-gradient(circle at 40% 60%, rgba(65, 105, 225, 0.15) 0%, transparent 50%);
+        }
+
+        body.dark-mode #contact {
+            background: linear-gradient(135deg, var(--neon-purple) 0%, var(--neon-blue) 100%);
+        }
+
+        /* Dark mode color overrides with purple accents */
         body.dark-mode h2.heading,
         body.dark-mode h3,
         body.dark-mode .vtimeline-content h3,
@@ -106,27 +268,33 @@
         }
 
         body.dark-mode .heading:after {
-            background: #fff;
+            background: var(--gradient-primary);
+            height: 4px;
         }
 
         body.dark-mode .education-block,
         body.dark-mode .optional-section-block,
         body.dark-mode .vtimeline-content {
-            border-color: #444;
-            background-color: #2d2d2d;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            background: linear-gradient(135deg, rgba(45, 45, 45, 0.9) 0%, rgba(61, 42, 77, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(138, 43, 226, 0.1);
         }
 
         body.dark-mode #experience-timeline:before,
         body.dark-mode #experience-timeline:after {
-            background: #fff;
+            background: var(--gradient-primary);
+            width: 4px;
         }
 
         body.dark-mode .vtimeline-icon {
-            background: #fff;
+            background: var(--gradient-primary);
+            border: 2px solid rgba(138, 43, 226, 0.5);
+            box-shadow: 0 0 20px rgba(138, 43, 226, 0.3);
         }
 
         body.dark-mode .vtimeline-icon i {
-            color: #2d2d2d;
+            color: #fff;
         }
 
         /* Mobile menu dark mode styles */
@@ -138,6 +306,195 @@
         body.dark-mode #mobile-menu-close span {
             color: #fff;
         }
+
+        /* Scroll animations and micro-interactions */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Enhanced hover effects */
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        body.dark-mode .project:hover {
+            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.3);
+        }
+
+        .project-image img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Parallax effect for hero section */
+        #lead {
+            position: relative;
+            overflow: hidden;
+        }
+
+        #lead::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%),
+                radial-gradient(circle, rgba(65, 105, 225, 0.1) 0%, transparent 70%);
+            animation: floatBackground 20s ease-in-out infinite;
+            z-index: -1;
+        }
+
+        /* Fix lead-content visibility for larger screens */
+        @media (min-width: 993px) {
+            #lead-content {
+                position: absolute !important;
+                top: 50% !important;
+                left: 50% !important;
+                transform: translate(-50%, -50%) !important;
+                z-index: 10 !important;
+            }
+        }
+
+        @keyframes floatBackground {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+
+        /* Button hover effects - exclude project links to fix dark theme bug */
+        button, .btn, a[href^="http"]:not(.no-scroll):not(.project-info a) {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        button::before, .btn::before, a[href^="http"]:not(.no-scroll):not(.project-info a)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        button:hover::before, .btn:hover::before, a[href^="http"]:not(.no-scroll):not(.project-info a):hover::before {
+            left: 100%;
+        }
+
+        /* Proper project link styling */
+        .project-info a {
+            position: relative;
+            display: inline-block;
+            padding: 8px 16px;
+            background: var(--gradient-primary);
+            color: white !important;
+            text-decoration: none !important;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .project-info a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
+        }
+
+        body.dark-mode .project-info a {
+            background: var(--gradient-primary);
+            color: white !important;
+        }
+
+        body.dark-mode .project-info a:hover {
+            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.6);
+        }
+
+        /* Skills section hover effects */
+        #skills li {
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        #skills li:hover {
+            transform: scale(1.05);
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.3);
+        }
+
+        /* Timeline item animations */
+        .vtimeline-content {
+            transition: all 0.3s ease;
+        }
+
+        .vtimeline-content:hover {
+            transform: translateX(10px);
+            box-shadow: -5px 0 15px rgba(138, 43, 226, 0.2);
+        }
+
+        body.dark-mode .vtimeline-content:hover {
+            box-shadow: -5px 0 15px rgba(138, 43, 226, 0.4);
+        }
+
+        /* Theme toggle enhanced animation */
+        .theme-toggle {
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1) rotate(15deg);
+        }
+
+        /* Loading pulse animation for elements */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Staggered animation delays */
+        .fade-in:nth-child(1) { transition-delay: 0.1s; }
+        .fade-in:nth-child(2) { transition-delay: 0.2s; }
+        .fade-in:nth-child(3) { transition-delay: 0.3s; }
+        .fade-in:nth-child(4) { transition-delay: 0.4s; }
+        .fade-in:nth-child(5) { transition-delay: 0.5s; }
     </style>
 </head>
 
@@ -194,10 +551,10 @@
     <div id="about">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 slide-in-left">
                     <h2 class="heading">About Me</h2>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 slide-in-right">
                     <p>Software Engineer skilled in writing scalable, maintainable code across various languages and frameworks, with expertise in handling critical issues throughout the SDLC. 
                         Hands-on experience in Game Development, AI, and ML. A problem-solver at heart, professionally driven by software development. 
                     </p>
@@ -206,11 +563,12 @@
         </div>
     </div>
     <!-- End #about -->
+    <div class="section-divider"></div>
 
     <div id="experience" class="background-alt">
-        <h2 class="heading">Experience</h2>
+        <h2 class="heading fade-in">Experience</h2>
         <div id="experience-timeline">
-            <div data-date="July 2024 – Present">
+            <div data-date="July 2024 – Present" class="fade-in">
                 <h3>Ingram Micro</h3>
                 <h4>Software Development Engineer</h4>
                     <p>Built a robust cost update module for Vendors with cloud products, leveraging Java and Spring framework, PostgreSQL DBMS and Google Cloud Platform for storage.
@@ -219,7 +577,7 @@
                     </p>
             </div>
 
-            <div data-date="May 2023 - July 2023">
+            <div data-date="May 2023 - July 2023" class="fade-in">
                 <h3>LTIMindtree Ltd.</h3>
                 <h4>Software Developer Intern</h4>
                 <p>
@@ -227,7 +585,7 @@
                 </p>
             </div>
 
-            <div data-date="June 2022 - July 2023">
+            <div data-date="June 2022 - July 2023" class="fade-in">
                 <h3>MatSoc – The Materials Society, IIT Kanpur</h3>
                 <h4>Co-Founder & UG Convener</h4>
                 <p>Co-Founded a 600+ member Departmental Society to engage & promote MSE research & technology awareness. Headed a team of 20+ & organized Orientation, Farewell, 6 alumni talks & workshops, Research Scholars' Day.
@@ -235,7 +593,7 @@
                 </p>
             </div>
 
-            <div data-date="May 2022 - April 2023">
+            <div data-date="May 2022 - April 2023" class="fade-in">
                 <h3>Game Development Club, IIT Kanpur</h3>
                 <h4>Coordinator</h4>
                 <p>Leading a 3-tier team of 40+ members to foster Game Development by organizing game jams, workshops & projects.
@@ -244,7 +602,7 @@
                 </p>
             </div>
 
-            <div data-date="May 2022 - July 2022">
+            <div data-date="May 2022 - July 2022" class="fade-in">
                 <h3>SURGE 2022, IIT Kanpur</h3>
                 <h4>Research Intern</h4>
                 <p>
@@ -254,10 +612,11 @@
         </div>
     </div>
     <!-- End #experience -->
+    <div class="section-divider"></div>
 
     <div id="education">
-        <h2 class="heading">Education</h2>
-        <div class="education-block">
+        <h2 class="heading fade-in">Education</h2>
+        <div class="education-block fade-in">
             <h3>Indian Institute of Technology Kanpur</h3>
             <span class="education-date">2020 - 2024</span>
             <h4>Bachelor of Technology, Materials Science and Engineering</h4>
@@ -265,12 +624,13 @@
         <!-- End .education-block -->
     </div>
     <!-- End #education -->
+    <div class="section-divider"></div>
 
     <div id="projects" class="background-alt">
-        <h2 class="heading">Projects</h2>
+        <h2 class="heading fade-in">Projects</h2>
         <div class="container">
             <div class="row">
-                <div class="project shadow-large">
+                <div class="project shadow-large fade-in">
                     <div class="project-image">
                         <img src="images/Game_Cover_Scene1.jpg" style='height: 300px; width: 300px;object-fit: cover;'/>
                     </div>
@@ -286,7 +646,7 @@
                 </div>
                 <!-- End .project -->
 
-                <div class="project shadow-large">
+                <div class="project shadow-large fade-in">
                     <div class="project-image">
                         <img src="images/robolin-tiles2.jpg"  style='height: 300px; width: 300px;object-fit: cover;' />
                     </div>
@@ -305,10 +665,11 @@
         </div>
     </div>
     <!-- End #projects -->
+    <div class="section-divider"></div>
 
     <div id="skills">
-        <h2 class="heading">Skills</h2>
-        <ul>
+        <h2 class="heading fade-in">Skills</h2>
+        <ul class="fade-in">
             <li>Java</li>
             <li>C#</li>
             <li>C++</li>
@@ -324,6 +685,7 @@
         </ul>
     </div>
     <!-- End #skills -->
+    <div class="section-divider"></div>
 
     <div id="contact">
         <h2>Get in Touch</h2>
@@ -374,7 +736,7 @@
     <!-- End footer -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="js/scripts.min.js"></script>
+    <script src="js/scripts.js"></script>
     
   <script type="module">
     import { neonCursor } from 'https://unpkg.com/threejs-toys@0.0.8/build/threejs-toys.module.cdn.min.js';
@@ -461,6 +823,47 @@
 
     // Start the typewriter effect when the page loads
     window.addEventListener('load', typeWriter);
+
+    // Scroll animations
+    function handleScrollAnimations() {
+        const animatedElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
+
+    // Initialize scroll animations
+    document.addEventListener('DOMContentLoaded', handleScrollAnimations);
+
+    // Enhanced parallax effect for hero section (throttled for performance)
+    let ticking = false;
+    function updateParallax() {
+        const scrolled = window.pageYOffset;
+        const parallaxElement = document.querySelector('#lead::before');
+        if (parallaxElement) {
+            const rate = scrolled * -0.5;
+            parallaxElement.style.transform = `translate3d(0, ${rate}px, 0)`;
+        }
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateParallax);
+            ticking = true;
+        }
+    });
 </script>
 
 </body>

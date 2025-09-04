@@ -263,6 +263,12 @@
         body.dark-mode .vtimeline-date {
             color: #fff !important;
         }
+        
+        /* Ensure experience section headings are visible in dark mode */
+        body.dark-mode .vtimeline-content h4,
+        body.dark-mode #experience h4 {
+            color: #e0e0e0 !important;
+        }
 
         body.dark-mode .heading:after {
             background: var(--gradient-primary);
@@ -454,7 +460,7 @@
         
         /* Floating Social Media Widget Styles */
         .floating-social-widget {
-            position: fixed;
+            position: absolute;
             left: 30px;
             top: 50%;
             transform: translateY(-50%);
@@ -463,6 +469,12 @@
             flex-direction: column;
             gap: 20px;
             animation: slideInFromLeft 1s ease-out 0.5s both;
+            transition: opacity 0.3s ease;
+        }
+        
+        .floating-social-widget.hidden {
+            opacity: 0;
+            visibility: hidden;
         }
         
         .social-icon-wrapper {
@@ -577,19 +589,7 @@
             }
         }
         
-        /* Dark mode styles for floating social widget */
-        body.dark-mode .floating-social-widget .social-icon-wrapper {
-            background: rgba(45, 45, 45, 0.8);
-            border-color: rgba(138, 43, 226, 0.5);
-        }
-        
-        body.dark-mode .floating-social-widget .social-icon-wrapper:hover {
-            background: var(--gradient-primary);
-            border-color: rgba(138, 43, 226, 1);
-            box-shadow: 
-                0 8px 25px rgba(138, 43, 226, 0.6),
-                0 0 30px rgba(138, 43, 226, 0.4);
-        }
+        /* Dark mode styles for floating social widget - keep same as light mode */
         
         /* Mobile responsiveness */
         @media (max-width: 768px) {
@@ -623,10 +623,10 @@
         
         @media (max-width: 480px) {
             .floating-social-widget {
-                position: fixed;
+                position: absolute;
                 left: 50%;
                 top: auto;
-                bottom: 20px;
+                bottom: 60px;
                 transform: translateX(-50%);
                 flex-direction: row;
                 gap: 10px;
@@ -1435,6 +1435,31 @@
 
     // Initialize scroll animations
     document.addEventListener('DOMContentLoaded', handleScrollAnimations);
+    
+    // Control social widget visibility based on hero section
+    function handleSocialWidgetVisibility() {
+        const socialWidget = document.querySelector('.floating-social-widget');
+        const leadSection = document.querySelector('#lead');
+        
+        if (!socialWidget || !leadSection) return;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    socialWidget.classList.remove('hidden');
+                } else {
+                    socialWidget.classList.add('hidden');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        observer.observe(leadSection);
+    }
+    
+    // Initialize social widget visibility control
+    document.addEventListener('DOMContentLoaded', handleSocialWidgetVisibility);
 
     // Enhanced parallax effect for hero section (throttled for performance)
     let ticking = false;

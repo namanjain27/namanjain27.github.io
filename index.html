@@ -355,10 +355,15 @@
         /* Parallax effect for hero section */
         #lead {
             position: relative;
-            overflow: hidden;
+    min-height: 100vh;  /* full screen height */
+    overflow: hidden;   /* keep background controlled */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* center children vertically */
+    align-items: center;     /* center children horizontally */
         }
 
-        #lead::before {
+        /* #lead::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -370,7 +375,7 @@
                 radial-gradient(circle, rgba(65, 105, 225, 0.1) 0%, transparent 70%);
             animation: floatBackground 20s ease-in-out infinite;
             z-index: -1;
-        }
+        } */
 
         /* Fix lead-content visibility for larger screens */
         @media (min-width: 993px) {
@@ -379,12 +384,17 @@
                 top: 50% !important;
                 left: 50% !important;
                 transform: translate(-50%, -50%) !important;
-                z-index: 10 !important;
+                z-index: 100 !important;
             }
             
             /* Ensure social widget is visible on larger screens */
             .floating-social-widget {
-                z-index: 15 !important;
+                z-index: 200 !important;
+            }
+            
+            /* Make sure neon cursor stays behind content */
+            #app canvas {
+                z-index: 0 !important;
             }
         }
 
@@ -1181,7 +1191,7 @@
     <!-- End #experience -->
     <div class="section-divider"></div>
 
-    <div id="education">
+    <div F>
         <h2 class="heading fade-in">Education</h2>
         <div class="education-block fade-in">
             <h3>Indian Institute of Technology Kanpur</h3>

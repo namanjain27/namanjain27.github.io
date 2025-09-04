@@ -19,3 +19,15 @@
 - **Enhanced Interactivity**: Improved hover effects on project cards and images with smooth animations
 - **Better Navigation**: Multiple action buttons per project (View Project, Live Demo, Play Store links where applicable)
 - **Improved Visual Appeal**: Consistent card design with proper spacing, shadows, and responsive images
+
+## Phase 2 Debug: Layout Issues Fixed
+
+### Issues Resolved:
+- **Desktop Projects Layout**: Removed conflicting CSS rules from main styles.css that were overriding CSS Grid layout with old absolute positioning and float styles
+- **Lead Content Visibility**: The existing CSS fix for lead-content visibility on screens >992px was already in place and working correctly
+- **Project Card Structure**: Ensured proper vertical layout order (image → title → tech stack → description → buttons) across all screen sizes
+
+### Technical Fixes:
+- Removed old project styling rules (.project, .project-image, .project-info) from css/styles.css that used absolute positioning and float layout
+- Cleaned up conflicting responsive rules that were hiding project images and altering layout
+- Maintained separation of concerns with dedicated projects.css for all project-related styling

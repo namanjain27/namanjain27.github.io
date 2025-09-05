@@ -828,42 +828,45 @@
             }
         }
         
-        @media (max-width: 482px) {
+        @media (max-width: 768px) {
             .floating-social-widget {
-                position: fixed;
-                left: 0;
-                right: 0;
-                top: 40px;
+                position: absolute;
+                left: 50%;
+                right: auto;
+                top: 20%;
                 bottom: auto;
-                transform: none;
+                transform: translateX(-50%);
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
                 gap: 15px;
-                background: rgba(0, 0, 0, 0.7);
+                background: rgba(255, 255, 255, 0.2);
                 backdrop-filter: blur(10px);
                 padding: 12px 20px;
                 border-radius: 25px;
-                border: 1px solid rgba(138, 43, 226, 0.3);
-                z-index: 1001;
-                margin: 0 auto;
+                border: 1px solid rgba(255, 255, 255, 0.3);
+                z-index: 100;
+                margin: 0;
                 width: fit-content;
+                animation: none;
             }
             
             .social-icon-wrapper {
-                width: 35px;
-                height: 35px;
-                background: transparent;
-                border: none;
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.3);
             }
             
             .social-icon-wrapper:hover {
-                transform: scale(1.2);
+                transform: scale(1.1);
                 box-shadow: none;
+                background: rgba(255, 255, 255, 0.25);
             }
             
             .social-icon-wrapper a {
                 font-size: 18px;
+                color: #fff;
             }
             
             /* Hide tooltips on mobile */
@@ -874,10 +877,29 @@
         }
         
         /* Mobile dark mode styling for floating social widget */
-        @media (max-width: 482px) {
+        @media (max-width: 768px) {
             body.dark-mode .floating-social-widget {
                 background: rgba(45, 45, 45, 0.9);
                 border-color: rgba(138, 43, 226, 0.5);
+            }
+        }
+        
+        /* Ensure mobile menu is always above social widget */
+        @media only screen and (max-width: 768px) {
+            header {
+                z-index: 1000;
+            }
+            
+            #menu {
+                z-index: 1000;
+            }
+            
+            #mobile-menu-open {
+                z-index: 1001;
+            }
+            
+            #mobile-menu-close {
+                z-index: 1001;
             }
         }
         

@@ -176,40 +176,6 @@
             background: rgba(255, 255, 255, 0.1);
         }
         
-        /* Mobile theme toggle alignment - updated for new navbar */
-        @media only screen and (max-width: 768px) {
-            .theme-toggle {
-                position: fixed;
-                top: 20px;
-                right: 80px;
-                left: auto;
-                z-index: 1005;
-                background: rgba(255, 255, 255, 0.1);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                cursor: pointer;
-                padding: 7px;
-                border-radius: 8px;
-                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
-                height: 40px;
-                width: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                pointer-events: auto;
-                touch-action: manipulation;
-            }
-            
-            .theme-toggle i {
-                font-size: 18px;
-                color: rgba(255, 255, 255, 0.9);
-            }
-            
-            .theme-toggle:hover {
-                background: rgba(255, 255, 255, 0.2);
-                transform: none !important;
-            }
-        }
 
         /* Enhanced Dark mode styles with purple theme */
         body.dark-mode {
@@ -218,11 +184,6 @@
             transition: all 0.3s ease;
         }
 
-        body.dark-mode header {
-            background-color: rgba(45, 45, 45, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 2px solid var(--neon-purple);
-        }
 
         body.dark-mode #menu {
             background: linear-gradient(135deg, rgba(45, 45, 45, 0.95) 0%, rgba(42, 26, 61, 0.95) 100%);
@@ -343,35 +304,6 @@
         }
 
         
-        /* Dark mode theme toggle for mobile - updated for new navbar */
-        @media only screen and (max-width: 768px) {
-            body.dark-mode .theme-toggle {
-                background: rgba(45, 45, 45, 0.8);
-                backdrop-filter: blur(10px);
-                border: 1px solid rgba(138, 43, 226, 0.3);
-                box-shadow: 0 3px 6px rgba(138, 43, 226, 0.1), 0 3px 6px rgba(0, 0, 0, 0.15);
-                height: 40px;
-                width: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                z-index: 1005;
-                top: 20px;
-                right: 80px;
-                pointer-events: auto;
-                touch-action: manipulation;
-            }
-            
-            body.dark-mode .theme-toggle i {
-                color: var(--neon-purple);
-            }
-            
-            body.dark-mode .theme-toggle:hover {
-                background: rgba(138, 43, 226, 0.2);
-                border-color: rgba(138, 43, 226, 0.5);
-                transform: none !important;
-            }
-        }
 
         /* Scroll animations and micro-interactions */
         .fade-in {
@@ -873,19 +805,8 @@
             }
         }
         
-        /* Ensure new navbar is always above social widget and canvas */
+        /* Ensure canvas doesn't interfere with controls */
         @media only screen and (max-width: 768px) {
-            .modern-navbar {
-                z-index: 1002;
-            }
-            
-            .navbar-toggle {
-                z-index: 1003;
-                pointer-events: auto;
-                touch-action: manipulation;
-            }
-            
-            /* Ensure canvas doesn't interfere with navbar */
             #app canvas {
                 pointer-events: none !important;
                 z-index: -1 !important;
@@ -1124,49 +1045,45 @@
     </button>
     <header class="modern-navbar">
         <nav class="navbar-container">
-            <div class="navbar-brand">
-                <span class="brand-text">NJ</span>
-            </div>
-            
-            <div class="navbar-menu" id="navbar-menu">
-                <div class="navbar-nav">
-                    <a href="#about" class="nav-item">
-                        <span class="nav-text">About</span>
-                        <div class="nav-indicator"></div>
-                    </a>
-                    <a href="#experience" class="nav-item">
-                        <span class="nav-text">Experience</span>
-                        <div class="nav-indicator"></div>
-                    </a>
-                    <a href="#education" class="nav-item">
-                        <span class="nav-text">Education</span>
-                        <div class="nav-indicator"></div>
-                    </a>
-                    <a href="#projects" class="nav-item">
-                        <span class="nav-text">Projects</span>
-                        <div class="nav-indicator"></div>
-                    </a>
-                    <a href="#skills" class="nav-item">
-                        <span class="nav-text">Skills</span>
-                        <div class="nav-indicator"></div>
-                    </a>
-                    <a href="https://namanjain27.github.io/Resume.pdf" target="_blank" class="nav-item resume-link no-scroll">
-                        <span class="nav-text">Resume</span>
-                        <div class="nav-indicator"></div>
-                    </a>
-                    <a href="#contact" class="nav-item">
-                        <span class="nav-text">Contact</span>
-                        <div class="nav-indicator"></div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="navbar-toggle" id="navbar-toggle">
-                <span class="toggle-bar"></span>
-                <span class="toggle-bar"></span>
-                <span class="toggle-bar"></span>
+            <div class="navbar-nav">
+                <a href="#about" class="nav-item">
+                    <span class="nav-text">About</span>
+                    <div class="nav-indicator"></div>
+                </a>
+                <a href="#experience" class="nav-item">
+                    <span class="nav-text">Experience</span>
+                    <div class="nav-indicator"></div>
+                </a>
+                <a href="#education" class="nav-item">
+                    <span class="nav-text">Education</span>
+                    <div class="nav-indicator"></div>
+                </a>
+                <a href="#projects" class="nav-item">
+                    <span class="nav-text">Projects</span>
+                    <div class="nav-indicator"></div>
+                </a>
+                <a href="#skills" class="nav-item">
+                    <span class="nav-text">Skills</span>
+                    <div class="nav-indicator"></div>
+                </a>
+                <a href="https://namanjain27.github.io/Resume.pdf" target="_blank" class="nav-item resume-link no-scroll">
+                    <span class="nav-text">Resume</span>
+                    <div class="nav-indicator"></div>
+                </a>
+                <a href="#contact" class="nav-item">
+                    <span class="nav-text">Contact</span>
+                    <div class="nav-indicator"></div>
+                </a>
             </div>
         </nav>
+        
+        <!-- Mobile Toggle Button -->
+        <div class="mobile-navbar-toggle" id="navbar-toggle">
+            <span class="toggle-bar"></span>
+            <span class="toggle-bar"></span>
+            <span class="toggle-bar"></span>
+        </div>
+    </header>
 
         <!-- Mobile Menu Overlay -->
         <div class="mobile-menu-overlay" id="mobile-menu-overlay">

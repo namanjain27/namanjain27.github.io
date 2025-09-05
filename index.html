@@ -1314,7 +1314,7 @@
                                     LangGraph
                                 </span>
                                 <span class="tech-icon">
-                                    <img src="https://icons8.com/icon/59kMTndKioLH/chain" alt="LangChain"/>
+                                    <img src="https://img.icons8.com/?size=48&id=EvhyZpKOoV4z&format=png&color=000000" alt="LangChain"/>
                                     LangChain
                                 </span>
                             </div>
@@ -1349,7 +1349,7 @@
                                     Python
                                 </span>
                                 <span class="tech-icon">
-                                    <img src="https://img.icons8.com/fluency/48/react.png" alt="React"/>
+                                    <img src="https://img.icons8.com/color/48/react-native.png" alt="React"/>
                                     React
                                 </span>
                                 <span class="tech-icon">
@@ -1357,7 +1357,7 @@
                                     Docker
                                 </span>
                                 <span class="tech-icon">
-                                    <img src="https://img.icons8.com/fluency/48/aws.png" alt="aws"/>
+                                    <img src="https://img.icons8.com/color/48/amazon-web-services.png" alt="AWS"/>
                                     AWS
                                 </span>
                             </div>
@@ -1471,15 +1471,15 @@
                                     Python
                                 </span>
                                 <span class="tech-icon">
-                                    <img src="https://img.icons8.com/color/48/matlab.png" alt="MATLAB"/>
+                                    <img src="https://img.icons8.com/fluency/48/matlab.png" alt="MATLAB"/>
                                     MATLAB
                                 </span>
                                 <span class="tech-icon">
-                                    <img src="https://img.icons8.com/color/48/nlp.png" alt="NLP"/>
+                                    <img src="https://img.icons8.com/color/48/numpy.png" alt="NLP"/>
                                     NLP
                                 </span>
                                 <span class="tech-icon">
-                                    <img src="https://img.icons8.com/color/48/machine-learning.png" alt="ML"/>
+                                    <img src="https://img.icons8.com/color/48/artificial-intelligence.png" alt="ML"/>
                                     ML
                                 </span>
                             </div>
@@ -1953,22 +1953,19 @@
                     }, 400); // Increased timeout to ensure smooth transition
                     
                 } else {
-                    // Start opening: first hide image
+                    // Start opening: Begin both transitions simultaneously for smoother effect
                     projectImage.classList.add('hidden');
+                    projectDetails.style.display = 'flex';
                     
                     // Change icon
                     toggleIcon.classList.remove('fa-info-circle');
                     toggleIcon.classList.add('fa-times');
                     
-                    // Wait for image to fully transition out, then show details
+                    // Start details animation with slight delay for smoother transition
                     setTimeout(() => {
-                        projectDetails.style.display = 'flex';
-                        // Small delay to ensure display change is processed
-                        setTimeout(() => {
-                            projectDetails.classList.add('expanded');
-                            isExpanded = true;
-                        }, 50);
-                    }, 300); // Wait for image to fade out
+                        projectDetails.classList.add('expanded');
+                        isExpanded = true;
+                    }, 150); // Reduced delay for smoother overlap
                 }
 
                 // Add subtle pulse effect to the project card

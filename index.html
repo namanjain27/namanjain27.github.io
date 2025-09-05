@@ -282,14 +282,8 @@
         }
 
         /* Fix mobile navigation overlap - hide menu button when menu is open */
-        header.active ~ #mobile-menu-open {
+        body.active #mobile-menu-open {
             display: none !important;
-        }
-        
-        @media only screen and (max-width: 768px) {
-            header.active ~ #mobile-menu-open {
-                display: none !important;
-            }
         }
 
         body.dark-mode .background-alt {

@@ -115,8 +115,6 @@ header.sticky {
   padding: 0 7px;
   border-radius: 4px;
   background: #fff;
-  pointer-events: auto;
-  touch-action: manipulation;
 }
 #mobile-menu-close {
   display: none;

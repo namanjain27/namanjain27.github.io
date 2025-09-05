@@ -175,6 +175,37 @@
         .theme-toggle:hover {
             background: rgba(255, 255, 255, 0.1);
         }
+        
+        /* Mobile theme toggle alignment */
+        @media only screen and (max-width: 768px) {
+            .theme-toggle {
+                position: fixed;
+                top: 10px;
+                left: 15px;
+                z-index: 30;
+                background: #fff;
+                border: none;
+                cursor: pointer;
+                padding: 7px;
+                border-radius: 4px;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
+                height: 40px;
+                width: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            .theme-toggle i {
+                font-size: 20px;
+                color: #3498db;
+            }
+            
+            .theme-toggle:hover {
+                background: #eee;
+                transform: none !important;
+            }
+        }
 
         /* Enhanced Dark mode styles with purple theme */
         body.dark-mode {
@@ -308,6 +339,18 @@
         }
 
         /* Mobile menu dark mode styles */
+        body.dark-mode #mobile-menu-open {
+            background: #2d2d2d;
+            color: var(--neon-purple);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            box-shadow: 0 3px 6px rgba(138, 43, 226, 0.1), 0 3px 6px rgba(0, 0, 0, 0.15);
+        }
+        
+        body.dark-mode #mobile-menu-open:hover {
+            background: rgba(138, 43, 226, 0.1);
+            border-color: rgba(138, 43, 226, 0.5);
+        }
+
         body.dark-mode #mobile-menu-close {
             background: #2d2d2d;
             color: #fff;
@@ -315,6 +358,30 @@
 
         body.dark-mode #mobile-menu-close span {
             color: #fff;
+        }
+        
+        /* Dark mode theme toggle for mobile */
+        @media only screen and (max-width: 768px) {
+            body.dark-mode .theme-toggle {
+                background: #2d2d2d;
+                border: 1px solid rgba(138, 43, 226, 0.3);
+                box-shadow: 0 3px 6px rgba(138, 43, 226, 0.1), 0 3px 6px rgba(0, 0, 0, 0.15);
+                height: 40px;
+                width: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            body.dark-mode .theme-toggle i {
+                color: var(--neon-purple);
+            }
+            
+            body.dark-mode .theme-toggle:hover {
+                background: rgba(138, 43, 226, 0.1);
+                border-color: rgba(138, 43, 226, 0.5);
+                transform: none !important;
+            }
         }
 
         /* Scroll animations and micro-interactions */
@@ -761,20 +828,26 @@
             }
         }
         
-        @media (max-width: 480px) {
+        @media (max-width: 482px) {
             .floating-social-widget {
-                position: absolute;
-                left: 50%;
-                top: auto;
-                bottom: 60px;
-                transform: translateX(-50%);
+                position: fixed;
+                left: 0;
+                right: 0;
+                top: 40px;
+                bottom: auto;
+                transform: none;
                 flex-direction: row;
-                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
                 background: rgba(0, 0, 0, 0.7);
                 backdrop-filter: blur(10px);
-                padding: 10px;
+                padding: 12px 20px;
                 border-radius: 25px;
                 border: 1px solid rgba(138, 43, 226, 0.3);
+                z-index: 1001;
+                margin: 0 auto;
+                width: fit-content;
             }
             
             .social-icon-wrapper {
@@ -801,7 +874,7 @@
         }
         
         /* Mobile dark mode styling for floating social widget */
-        @media (max-width: 480px) {
+        @media (max-width: 482px) {
             body.dark-mode .floating-social-widget {
                 background: rgba(45, 45, 45, 0.9);
                 border-color: rgba(138, 43, 226, 0.5);

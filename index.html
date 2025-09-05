@@ -371,6 +371,10 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                z-index: 1005;
+                top: 60px;
+                pointer-events: auto;
+                touch-action: manipulation;
             }
             
             body.dark-mode .theme-toggle i {
@@ -884,22 +888,33 @@
             }
         }
         
-        /* Ensure mobile menu is always above social widget */
+        /* Ensure mobile menu is always above social widget and canvas */
         @media only screen and (max-width: 768px) {
             header {
-                z-index: 1000;
+                z-index: 1002;
             }
             
             #menu {
-                z-index: 1000;
+                z-index: 1002;
             }
             
             #mobile-menu-open {
-                z-index: 1001;
+                z-index: 1003;
+                pointer-events: auto;
+                touch-action: manipulation;
             }
             
             #mobile-menu-close {
-                z-index: 1001;
+                z-index: 1004;
+                pointer-events: auto;
+                touch-action: manipulation;
+            }
+            
+            /* Ensure canvas doesn't interfere with mobile menu button */
+            #app canvas {
+                pointer-events: none !important;
+                z-index: -1 !important;
+                touch-action: none !important;
             }
         }
         

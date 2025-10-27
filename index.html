@@ -341,7 +341,56 @@
         }
 
         body.dark-mode #contact {
-            background: linear-gradient(135deg, var(--neon-purple) 0%, var(--neon-blue) 100%);
+            background: linear-gradient(135deg, #1e1e2e 0%, #2d1b3d 100%);
+        }
+        
+        body.dark-mode #contact::before {
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(65, 105, 225, 0.15) 0%, transparent 50%);
+        }
+        
+        body.dark-mode #contact h2 {
+            color: #fff;
+        }
+        
+        body.dark-mode #contact-form form {
+            background: linear-gradient(135deg, rgba(45, 45, 45, 0.9) 0%, rgba(61, 42, 77, 0.9) 100%);
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            box-shadow: 
+                0 20px 40px rgba(138, 43, 226, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+        
+        body.dark-mode #contact-form input,
+        body.dark-mode #contact-form textarea {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(138, 43, 226, 0.3);
+            color: #fff;
+        }
+        
+        body.dark-mode #contact-form input::placeholder,
+        body.dark-mode #contact-form textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        body.dark-mode #contact-form input:focus,
+        body.dark-mode #contact-form textarea:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(138, 43, 226, 0.6);
+            box-shadow: 
+                0 0 0 3px rgba(138, 43, 226, 0.2),
+                0 8px 25px rgba(138, 43, 226, 0.2);
+        }
+        
+        body.dark-mode #contact-form button {
+            background: var(--gradient-primary);
+        }
+        
+        body.dark-mode #contact-form button:hover {
+            box-shadow: 
+                0 15px 35px rgba(138, 43, 226, 0.5),
+                0 5px 15px rgba(138, 43, 226, 0.3);
         }
 
         /* Dark mode color overrides with purple accents */
@@ -962,8 +1011,8 @@
         #contact {
             position: relative;
             padding: 80px 0;
-            background: var(--gradient-primary);
-            color: white;
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            color: #333;
             text-align: center;
         }
         
@@ -975,16 +1024,15 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(65, 105, 225, 0.03) 0%, transparent 50%);
             pointer-events: none;
         }
         
         #contact h2 {
-            color: white;
+            color: #333;
             font-size: 2.5em;
             margin-bottom: 30px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
             position: relative;
             z-index: 2;
         }
@@ -1001,41 +1049,40 @@
             flex-direction: column;
             gap: 25px;
             padding: 40px;
-            background: rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, #f1f3f4 0%, #e9ecef 100%);
             backdrop-filter: blur(15px);
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid #dee2e6;
             box-shadow: 
-                0 20px 40px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                0 20px 40px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5);
         }
         
         #contact-form input,
         #contact-form textarea {
             padding: 15px 20px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid #dee2e6;
             border-radius: 12px;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
+            background: #ffffff;
+            color: #333;
             font-size: 16px;
             font-family: 'Lato', sans-serif;
-            backdrop-filter: blur(10px);
             transition: all 0.3s ease;
             outline: none;
         }
         
         #contact-form input::placeholder,
         #contact-form textarea::placeholder {
-            color: rgba(255, 255, 255, 0.7);
+            color: #999;
         }
         
         #contact-form input:focus,
         #contact-form textarea:focus {
-            border-color: rgba(255, 255, 255, 0.6);
-            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--neon-purple);
+            background: #ffffff;
             box-shadow: 
-                0 0 0 3px rgba(255, 255, 255, 0.1),
-                0 8px 25px rgba(0, 0, 0, 0.1);
+                0 0 0 3px rgba(138, 43, 226, 0.1),
+                0 8px 25px rgba(138, 43, 226, 0.1);
             transform: translateY(-2px);
         }
         
@@ -1046,8 +1093,8 @@
         
         #contact-form button {
             padding: 18px 40px;
-            background: rgba(255, 255, 255, 0.2);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: var(--gradient-primary);
+            border: none;
             border-radius: 12px;
             color: white;
             font-size: 18px;
@@ -1073,12 +1120,10 @@
         }
         
         #contact-form button:hover {
-            background: rgba(255, 255, 255, 0.25);
-            border-color: rgba(255, 255, 255, 0.5);
             transform: translateY(-3px);
             box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.2),
-                0 5px 15px rgba(0, 0, 0, 0.1);
+                0 15px 35px rgba(138, 43, 226, 0.4),
+                0 5px 15px rgba(138, 43, 226, 0.2);
         }
         
         #contact-form button:hover::before {
@@ -1125,6 +1170,18 @@
             background: rgba(244, 67, 54, 0.2);
             border: 1px solid rgba(244, 67, 54, 0.5);
             color: #f44336;
+        }
+        
+        body.dark-mode .form-success {
+            background: rgba(76, 175, 80, 0.3);
+            border: 1px solid rgba(76, 175, 80, 0.6);
+            color: #81c784;
+        }
+        
+        body.dark-mode .form-error {
+            background: rgba(244, 67, 54, 0.3);
+            border: 1px solid rgba(244, 67, 54, 0.6);
+            color: #ef5350;
         }
         
         @keyframes messageSlideIn {
@@ -1285,7 +1342,7 @@
         <div id="experience-timeline">
             <div data-date="July 2024 – July 2025" class="fade-in">
                 <h3>Ingram Micro</h3>
-                <h4>Software Development Engineer</h4>
+                <h4>Software Engineer</h4>
                     <p>Built a robust cost update module for Vendors with cloud products, leveraging Java and Spring framework, PostgreSQL DBMS and Google Cloud Platform for storage.
                         Devised a bulk data export feature using Google Cloud's BigQuery jobs and merge files using gsutil. 
                         Streamlined collaboration by building an API log-book on Notion that stores project's API curls, dev history and UI request type. Employed multi-threading techniques and asynchronous processing in the catalog ingestion process for vendors.
@@ -1293,7 +1350,7 @@
             </div>
 
             <div data-date="May 2023 - July 2023" class="fade-in">
-                <h3>LTIMindtree Ltd.</h3>
+                <h3>LTIMindtree</h3>
                 <h4>Software Developer Intern (Received PPO)</h4>
                 <p>
                     Developed AI features for a chatbot used by BU heads for IP & patent management, using Microsoft Bot Framework SDK and Azure Cognitive AI services. Built a QnA generator in python that periodically extracts data from website into a structured dataset in tsv file. Employed Conversational Language Understanding model in MS Language Studio. 

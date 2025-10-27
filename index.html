@@ -45,6 +45,81 @@
             50% { border-color: #fff; }
         }
         
+        /* Resume prompt styling */
+        .resume-prompt {
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 2s both;
+        }
+        
+        .resume-prompt span {
+            font-style: italic;
+            letter-spacing: 0.5px;
+        }
+        
+        .resume-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .resume-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .resume-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--gradient-primary);
+            border-color: rgba(138, 43, 226, 0.8);
+            box-shadow: 
+                0 8px 25px rgba(138, 43, 226, 0.4),
+                0 0 20px rgba(138, 43, 226, 0.3);
+        }
+        
+        .resume-icon:hover::before {
+            left: 100%;
+        }
+        
+        .resume-icon:hover {
+            color: #fff;
+        }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
         /* Classic and consistent section backgrounds */
         #about {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -145,10 +220,34 @@
             .typewriter-text {
                 font-size: 2em;
             }
+            
+            .resume-prompt {
+                font-size: 1em;
+                margin-top: 20px;
+                gap: 10px;
+            }
+            
+            .resume-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
         }
         @media screen and (max-width: 480px) {
             .typewriter-text {
                 font-size: 1.5em;
+            }
+            
+            .resume-prompt {
+                font-size: 0.9em;
+                margin-top: 15px;
+                gap: 8px;
+            }
+            
+            .resume-icon {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
             }
         }
 
@@ -1312,9 +1411,9 @@
             <li>
                 <a href="#skills">Skills</a>
             </li>
-            <li >
+            <!-- <li >
                 <a href="https://namanjain27.github.io/Resume.pdf" target="_blank" class="no-scroll">Resume</a>
-            </li>
+            </li> -->
             <li>
                 <a href="#contact">Contact</a>
             </li>
@@ -1326,6 +1425,12 @@
             <div id="lead-content">
                 <h1>Naman Jain</h1>
                 <div class="typewriter-text" id="typewriter"></div>
+                <div class="resume-prompt">
+                    <span>idc, resume please</span>
+                    <a href="https://namanjain27.github.io/Resume.pdf" target="_blank" class="resume-icon" aria-label="Download Resume">
+                        <i class="fa fa-file-text-o"></i>
+                    </a>
+                </div>
             </div>
             
             <!-- Floating Social Media Widget -->
@@ -1442,7 +1547,7 @@
         <div class="education-block fade-in">
             <h3>Indian Institute of Technology Kanpur</h3>
             <span class="education-date">2020 - 2024</span>
-            <h4>Bachelor of Technology, Materials Science and Engineering</h4>
+            <h4>Bachelor of Technology</h4>
         </div>
         <!-- End .education-block -->
     </div>

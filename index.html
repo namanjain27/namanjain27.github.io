@@ -301,6 +301,21 @@
             background: linear-gradient(135deg, var(--dark-secondary) 0%, #2a1a3d 100%);
             border-top: 2px solid var(--neon-purple);
         }
+        
+        /* Footer social icons styling */
+        footer .social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        footer .social a svg {
+            transition: all 0.3s ease;
+        }
+        
+        footer .social a:hover svg {
+            transform: scale(1.2);
+        }
 
         body.dark-mode .theme-toggle i {
             color: var(--neon-purple);
@@ -801,8 +816,16 @@
             transition: all 0.3s ease;
         }
         
+        .social-icon-wrapper a svg {
+            transition: all 0.3s ease;
+        }
+        
         .social-icon-wrapper:hover a {
             color: #fff;
+            transform: scale(1.1);
+        }
+        
+        .social-icon-wrapper:hover a svg {
             transform: scale(1.1);
         }
         
@@ -971,6 +994,11 @@
             .social-icon-wrapper a {
                 font-size: 18px;
                 color: #fff;
+            }
+            
+            .social-icon-wrapper a svg {
+                width: 18px;
+                height: 18px;
             }
             
             /* Hide tooltips on mobile */
@@ -1296,9 +1324,11 @@
                         <i class="fa fa-linkedin"></i>
                     </a>
                 </div>
-                <div class="social-icon-wrapper" data-tooltip="Twitter">
-                    <a href="https://x.com/jainnaman_27" target="_blank" aria-label="Twitter">
-                        <i class="fa fa-twitter"></i>
+                <div class="social-icon-wrapper" data-tooltip="X (Twitter)">
+                    <a href="https://x.com/jainnaman_27" target="_blank" aria-label="X (Twitter)">
+                        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="display: block;">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
                     </a>
                 </div>
                 <div class="social-icon-wrapper" data-tooltip="StackOverflow">
@@ -1717,7 +1747,11 @@
                             <a href="https://www.linkedin.com/in/jainnaman027/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="https://x.com/jainnaman_27" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            <a href="https://x.com/jainnaman_27" target="_blank" aria-label="X (Twitter)">
+                                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="display: block;">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
                         </li>
                     </ul>
                 </div>

@@ -424,6 +424,22 @@
         body.dark-mode #experience h4 {
             color: #e0e0e0 !important;
         }
+        
+        /* Company location styling */
+        .company-location {
+            display: inline-block;
+            /* font-style: italic; */
+            font-size: 0.85em;
+            color: #666;
+            margin: 3px 0 10px 5px;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+        
+        body.dark-mode .company-location {
+            color: #999;
+            opacity: 0.9;
+        }
 
         body.dark-mode .heading:after {
             background: var(--gradient-primary);
@@ -1372,6 +1388,7 @@
         <div id="experience-timeline">
             <div data-date="July 2024 – July 2025" class="fade-in">
                 <h3>Ingram Micro</h3>
+                <span class="company-location">(Mumbai)</span>
                 <h4>Software Engineer</h4>
                     <p>Built a robust cost update module for Vendors with cloud products, leveraging Java and Spring framework, PostgreSQL DBMS and Google Cloud Platform for storage.
                         Devised a bulk data export feature using Google Cloud's BigQuery jobs and merge files using gsutil. 
@@ -1381,14 +1398,23 @@
 
             <div data-date="May 2023 - July 2023" class="fade-in">
                 <h3>LTIMindtree</h3>
+                <span class="company-location">(Hyderabad)</span>
                 <h4>Software Developer Intern (Received PPO)</h4>
                 <p>
                     Developed AI features for a chatbot used by BU heads for IP & patent management, using Microsoft Bot Framework SDK and Azure Cognitive AI services. Built a QnA generator in python that periodically extracts data from website into a structured dataset in tsv file. Employed Conversational Language Understanding model in MS Language Studio. 
                 </p>
             </div>
-
+            <div data-date="May 2022 - July 2022" class="fade-in">
+                <h3>SURGE IITK 2022</h3>
+                <span class="company-location">(Kanpur)</span>
+                <h4>Research Intern</h4>
+                <p>
+                    Generated creep curve plots for α-β Titanium (Ti-6 Al-4) based high temperature alloys using mathematical models and ML techniques. Feature engineered 4 out of 7 variables through principal component analysis (PCA) and Pearson correlation. Tested multiple regression models to arrive at acceptable results.
+                </p>
+            </div>
             <div data-date="June 2022 - July 2023" class="fade-in">
                 <h3>MatSoc – The Materials Society, IIT Kanpur</h3>
+                <span class="company-location">(Kanpur)</span>
                 <h4>Co-Founder & UG Convener</h4>
                 <p>Co-Founded a 600+ member Departmental Society to engage & promote MSE research & technology awareness. Headed a team of 20+ & organized Orientation, Farewell, 6 alumni talks & workshops, Research Scholars' Day.
                     Formulated an annual structure of events, project proposals, society's financial budgeting structure and rules.
@@ -1397,6 +1423,7 @@
 
             <div data-date="May 2022 - April 2023" class="fade-in">
                 <h3>Game Development Club, IIT Kanpur</h3>
+                <span class="company-location">(Kanpur)</span>
                 <h4>Coordinator</h4>
                 <p>Leading a 3-tier team of 40+ members to foster Game Development by organizing game jams, workshops & projects.
                     Mentored multiple specialized projects on Gamification, Augmented Reality & AI games using Unity Game Engine.
@@ -1404,13 +1431,7 @@
                 </p>
             </div>
 
-<!--             <div data-date="May 2022 - July 2022" class="fade-in">
-                <h3>SURGE 2022, IIT Kanpur</h3>
-                <h4>Research Intern</h4>
-                <p>
-                    Generated creep curve plots for α-β Titanium (Ti-6 Al-4) based high temperature alloys using mathematical models and ML techniques. Feature engineered 4 out of 7 variables through principal component analysis (PCA) and Pearson correlation. Tested multiple regression models to arrive at acceptable results.
-                </p>
-            </div> -->
+
         </div>
     </div>
     <!-- End #experience -->

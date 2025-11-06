@@ -253,7 +253,7 @@
 
 
         /* Dark mode toggle styles */
-        .theme-toggle {
+        /* .theme-toggle {
             position: fixed;
             top: 20px;
             left: 20px;
@@ -274,9 +274,9 @@
         .theme-toggle:hover {
             background: rgba(255, 255, 255, 0.1);
         }
-        
+         */
         /* Mobile theme toggle alignment */
-        @media only screen and (max-width: 768px) {
+        /* @media only screen and (max-width: 768px) {
             .theme-toggle {
                 position: fixed;
                 top: 10px;
@@ -293,9 +293,9 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-            }
+            } */
             
-            .theme-toggle i {
+            /* .theme-toggle i {
                 font-size: 20px;
                 color: #3498db;
             }
@@ -304,7 +304,7 @@
                 background: #eee;
                 transform: none !important;
             }
-        }
+        } */
 
         /* Enhanced Dark mode styles with purple theme */
         body.dark-mode {
@@ -2166,112 +2166,112 @@
         }
     });
     
-    // Enhanced contact form submission handling
-    const contactForm = document.querySelector('#contact-form form');
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.textContent;
+    // // Enhanced contact form submission handling
+    // const contactForm = document.querySelector('#contact-form form');
+    // const submitButton = contactForm.querySelector('button[type="submit"]');
+    // const originalButtonText = submitButton.textContent;
     
-    // Create loading spinner
-    function createLoadingSpinner() {
-        const spinner = document.createElement('div');
-        spinner.innerHTML = `
-            <style>
-                .spinner {
-                    display: inline-block;
-                    width: 20px;
-                    height: 20px;
-                    border: 2px solid rgba(255,255,255,0.3);
-                    border-radius: 50%;
-                    border-top-color: white;
-                    animation: spin 1s ease-in-out infinite;
-                    margin-right: 10px;
-                }
-                @keyframes spin {
-                    to { transform: rotate(360deg); }
-                }
-            </style>
-            <span class="spinner"></span>
-        `;
-        return spinner.querySelector('.spinner');
-    }
+    // // Create loading spinner
+    // function createLoadingSpinner() {
+    //     const spinner = document.createElement('div');
+    //     spinner.innerHTML = `
+    //         <style>
+    //             .spinner {
+    //                 display: inline-block;
+    //                 width: 20px;
+    //                 height: 20px;
+    //                 border: 2px solid rgba(255,255,255,0.3);
+    //                 border-radius: 50%;
+    //                 border-top-color: white;
+    //                 animation: spin 1s ease-in-out infinite;
+    //                 margin-right: 10px;
+    //             }
+    //             @keyframes spin {
+    //                 to { transform: rotate(360deg); }
+    //             }
+    //         </style>
+    //         <span class="spinner"></span>
+    //     `;
+    //     return spinner.querySelector('.spinner');
+    // }
     
-    // Show form message
-    function showFormMessage(message, type) {
-        // Remove existing message
-        const existingMessage = contactForm.parentNode.querySelector('.form-message');
-        if (existingMessage) {
-            existingMessage.remove();
-        }
+    // // Show form message
+    // function showFormMessage(message, type) {
+    //     // Remove existing message
+    //     const existingMessage = contactForm.parentNode.querySelector('.form-message');
+    //     if (existingMessage) {
+    //         existingMessage.remove();
+    //     }
         
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `form-message form-${type}`;
-        messageDiv.textContent = message;
-        contactForm.parentNode.appendChild(messageDiv);
+    //     const messageDiv = document.createElement('div');
+    //     messageDiv.className = `form-message form-${type}`;
+    //     messageDiv.textContent = message;
+    //     contactForm.parentNode.appendChild(messageDiv);
         
-        // Auto-remove after 5 seconds
-        setTimeout(() => {
-            if (messageDiv.parentNode) {
-                messageDiv.style.opacity = '0';
-                messageDiv.style.transform = 'translateY(-20px)';
-                setTimeout(() => messageDiv.remove(), 300);
-            }
-        }, 5000);
-    }
+    //     // Auto-remove after 5 seconds
+    //     setTimeout(() => {
+    //         if (messageDiv.parentNode) {
+    //             messageDiv.style.opacity = '0';
+    //             messageDiv.style.transform = 'translateY(-20px)';
+    //             setTimeout(() => messageDiv.remove(), 300);
+    //         }
+    //     }, 5000);
+    // }
     
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    // contactForm.addEventListener('submit', async (e) => {
+    //     e.preventDefault();
         
-        // Add loading state
-        const spinner = createLoadingSpinner();
-        submitButton.disabled = true;
-        submitButton.style.opacity = '0.7';
-        submitButton.style.cursor = 'not-allowed';
-        submitButton.insertBefore(spinner, submitButton.firstChild);
-        submitButton.innerHTML = spinner.outerHTML + 'Sending...';
+    //     // Add loading state
+    //     const spinner = createLoadingSpinner();
+    //     submitButton.disabled = true;
+    //     submitButton.style.opacity = '0.7';
+    //     submitButton.style.cursor = 'not-allowed';
+    //     submitButton.insertBefore(spinner, submitButton.firstChild);
+    //     submitButton.innerHTML = spinner.outerHTML + 'Sending...';
         
-        try {
-            const formData = new FormData(contactForm);
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
+    //     try {
+    //         const formData = new FormData(contactForm);
+    //         const response = await fetch(contactForm.action, {
+    //             method: 'POST',
+    //             body: formData,
+    //             headers: {
+    //                 'Accept': 'application/json'
+    //             }
+    //         });
             
-            if (response.ok) {
-                showFormMessage('Thank you! Your message has been sent successfully.', 'success');
-                contactForm.reset();
+    //         if (response.ok) {
+    //             showFormMessage('Thank you! Your message has been sent successfully.', 'success');
+    //             contactForm.reset();
                 
-                // Success animation
-                submitButton.style.background = 'rgba(76, 175, 80, 0.3)';
-                submitButton.style.borderColor = 'rgba(76, 175, 80, 0.5)';
-                setTimeout(() => {
-                    submitButton.style.background = '';
-                    submitButton.style.borderColor = '';
-                }, 2000);
-            } else {
-                throw new Error('Form submission failed');
-            }
-        } catch (error) {
-            console.error('Form submission error:', error);
-            showFormMessage('Sorry, there was an error sending your message. Please try again.', 'error');
+    //             // Success animation
+    //             submitButton.style.background = 'rgba(76, 175, 80, 0.3)';
+    //             submitButton.style.borderColor = 'rgba(76, 175, 80, 0.5)';
+    //             setTimeout(() => {
+    //                 submitButton.style.background = '';
+    //                 submitButton.style.borderColor = '';
+    //             }, 2000);
+    //         } else {
+    //             throw new Error('Form submission failed');
+    //         }
+    //     } catch (error) {
+    //         console.error('Form submission error:', error);
+    //         showFormMessage('Sorry, there was an error sending your message. Please try again.', 'error');
             
-            // Error animation
-            submitButton.style.background = 'rgba(244, 67, 54, 0.3)';
-            submitButton.style.borderColor = 'rgba(244, 67, 54, 0.5)';
-            setTimeout(() => {
-                submitButton.style.background = '';
-                submitButton.style.borderColor = '';
-            }, 2000);
-        } finally {
-            // Reset button state
-            submitButton.disabled = false;
-            submitButton.style.opacity = '';
-            submitButton.style.cursor = '';
-            submitButton.textContent = originalButtonText;
-        }
-    });
+    //         // Error animation
+    //         submitButton.style.background = 'rgba(244, 67, 54, 0.3)';
+    //         submitButton.style.borderColor = 'rgba(244, 67, 54, 0.5)';
+    //         setTimeout(() => {
+    //             submitButton.style.background = '';
+    //             submitButton.style.borderColor = '';
+    //         }, 2000);
+    //     } finally {
+    //         // Reset button state
+    //         submitButton.disabled = false;
+    //         submitButton.style.opacity = '';
+    //         submitButton.style.cursor = '';
+    //         submitButton.textContent = originalButtonText;
+    //     }
+    // });
 
     // Project toggle functionality
     function initProjectToggles() {

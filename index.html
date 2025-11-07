@@ -252,59 +252,10 @@
         }
 
 
-        /* Dark mode toggle styles */
-        /* .theme-toggle {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 1000;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 10px;
-            border-radius: 50%;
-            transition: all 0.3s ease;
+        /* Dark mode toggle styles - HIDDEN */
+        .theme-toggle {
+            display: none !important;
         }
-
-        .theme-toggle i {
-            font-size: 24px;
-            color: #fff;
-        }
-
-        .theme-toggle:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-         */
-        /* Mobile theme toggle alignment */
-        /* @media only screen and (max-width: 768px) {
-            .theme-toggle {
-                position: fixed;
-                top: 10px;
-                left: 15px;
-                z-index: 30;
-                background: #fff;
-                border: none;
-                cursor: pointer;
-                padding: 7px;
-                border-radius: 4px;
-                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08), 0 3px 6px rgba(0, 0, 0, 0.15);
-                height: 40px;
-                width: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            } */
-            
-            /* .theme-toggle i {
-                font-size: 20px;
-                color: #3498db;
-            }
-            
-            .theme-toggle:hover {
-                background: #eee;
-                transform: none !important;
-            }
-        } */
 
         /* Enhanced Dark mode styles with purple theme */
         body.dark-mode {
@@ -1987,6 +1938,9 @@
                                 </svg>
                             </a>
                         </li>
+                        <li>
+                            <a href="mailto:jainnaman027@gmail.com" target="_blank" aria-label="Email"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -2059,13 +2013,10 @@
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = themeToggle.querySelector('i');
     
-    // Check for saved theme preference
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-mode');
-        themeIcon.classList.remove('fa-moon-o');
-        themeIcon.classList.add('fa-sun-o');
-    }
+    // Set dark mode by default
+    document.body.classList.add('dark-mode');
+    themeIcon.classList.remove('fa-moon-o');
+    themeIcon.classList.add('fa-sun-o');
 
     themeToggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');

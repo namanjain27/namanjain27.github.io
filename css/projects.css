@@ -140,7 +140,7 @@
     position: absolute;
     top: 15px;
     right: 15px;
-    background: rgba(138, 43, 226, 0.9);
+    background: rgba(32, 178, 170, 0.9);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -151,13 +151,13 @@
     z-index: 10;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(138, 43, 226, 0.3);
+    box-shadow: 0 4px 15px rgba(32, 178, 170, 0.3);
 }
 
 .project-toggle:hover {
-    background: rgba(138, 43, 226, 1);
+    background: rgba(32, 178, 170, 1);
     transform: scale(1.1) rotate(15deg);
-    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.5);
+    box-shadow: 0 6px 20px rgba(32, 178, 170, 0.5);
 }
 
 .project-toggle:active {
@@ -244,7 +244,7 @@
 
 .project-info a:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.4);
+    box-shadow: 0 6px 20px rgba(32, 178, 170, 0.4);
 }
 
 .project-info a.secondary {
@@ -260,13 +260,13 @@
 
 /* Dark mode project styling */
 body.dark-mode .project {
-    background: linear-gradient(135deg, var(--dark-secondary) 0%, #3d2a4d 100%);
-    border: 1px solid rgba(138, 43, 226, 0.3);
-    box-shadow: 0 8px 32px rgba(138, 43, 226, 0.1);
+    background: linear-gradient(135deg, var(--dark-secondary) 0%, #2d3d3c 100%);
+    border: 1px solid rgba(32, 178, 170, 0.3);
+    box-shadow: 0 8px 32px rgba(32, 178, 170, 0.1);
 }
 
 body.dark-mode .project:hover {
-    box-shadow: 0 20px 40px rgba(138, 43, 226, 0.3);
+    box-shadow: 0 20px 40px rgba(32, 178, 170, 0.3);
 }
 
 body.dark-mode .project-info h3 {
@@ -280,7 +280,7 @@ body.dark-mode .project-info p {
 body.dark-mode .tech-icon {
     background: rgba(45, 45, 45, 0.8);
     color: #ccc;
-    border: 1px solid rgba(138, 43, 226, 0.3);
+    border: 1px solid rgba(32, 178, 170, 0.3);
 }
 
 body.dark-mode .tech-icon:hover {
@@ -294,7 +294,7 @@ body.dark-mode .project-info a {
 }
 
 body.dark-mode .project-info a:hover {
-    box-shadow: 0 6px 20px rgba(138, 43, 226, 0.6);
+    box-shadow: 0 6px 20px rgba(32, 178, 170, 0.6);
 }
 
 body.dark-mode .project-info a.secondary {
@@ -310,14 +310,14 @@ body.dark-mode .project-info a.secondary:hover {
 
 /* Dark mode styling for new elements */
 body.dark-mode .project-toggle {
-    background: rgba(138, 43, 226, 0.8);
-    border: 1px solid rgba(138, 43, 226, 0.5);
+    background: rgba(32, 178, 170, 0.8);
+    border: 1px solid rgba(32, 178, 170, 0.5);
 }
 
 body.dark-mode .project-toggle:hover {
-    background: rgba(138, 43, 226, 1);
-    border-color: rgba(138, 43, 226, 0.8);
-    box-shadow: 0 6px 25px rgba(138, 43, 226, 0.6);
+    background: rgba(32, 178, 170, 1);
+    border-color: rgba(32, 178, 170, 0.8);
+    box-shadow: 0 6px 25px rgba(32, 178, 170, 0.6);
 }
 
 body.dark-mode .project-footer h3 {
@@ -329,8 +329,8 @@ body.dark-mode .project-info p {
 }
 
 body.dark-mode .project-details {
-    background: linear-gradient(135deg, #2d2d2d 0%, #3d2a4d 100%);
-    border: 1px solid rgba(138, 43, 226, 0.3);
+    background: linear-gradient(135deg, #2d2d2d 0%, #2d3d3c 100%);
+    border: 1px solid rgba(32, 178, 170, 0.3);
 }
 
 /* Animation for project cards */

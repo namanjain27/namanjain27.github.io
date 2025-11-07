@@ -25,11 +25,32 @@
             --gradient-primary: linear-gradient(135deg, var(--neon-purple), var(--neon-blue));
             --gradient-secondary: linear-gradient(135deg, #5F9EA0 0%, #20B2AA 100%);
             --gradient-accent: linear-gradient(135deg, #7FFFD4 0%, #00CED1 100%);
+            
+            /* Font size variables - adjust h1-size to scale all elements proportionally */
+            --h1-size: 5em;  /* Default for screens > 1093px */
         }
 
+        /* Lead content h1 styling with greeting */
+        #lead-content h1 {
+            position: relative;
+            font-size: var(--h1-size);
+            padding-top: 0.8em;
+        }
+        
+        #lead-content h1::before {
+            content: "Hi! I'm";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.3em;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 1px;
+        }
         
         .typewriter-text {
-            font-size: 2.5em;
+            font-size: calc(var(--h1-size) * 0.5);  /* 50% of h1 */
             color: #fff;
             text-align: center;
             margin-top: 15px;
@@ -52,7 +73,7 @@
             align-items: center;
             justify-content: center;
             gap: 12px;
-            font-size: 1.1em;
+            font-size: calc(var(--h1-size) * 0.3);  /* 30% of h1 */
             color: rgba(255, 255, 255, 0.9);
             font-weight: 300;
             animation: fadeInUp 1s ease-out 2s both;
@@ -215,16 +236,34 @@
             100% { left: 100%; }
         }
         
-        /* Responsive adjustments */
+        /* Responsive adjustments with proportional scaling */
+        
+        /* For screens between 993px and 1093px - smaller h1 */
+        @media screen and (min-width: 993px) and (max-width: 1093px) {
+            :root {
+                --h1-size: 4em;
+            }
+        }
+        
+        /* For screens between 769px and 992px - all three smaller */
+        @media screen and (min-width: 769px) and (max-width: 992px) {
+            :root {
+                --h1-size: 3.5em;
+            }
+        }
+        
+        /* Below 769px - further reduced sizing */
         @media screen and (max-width: 768px) {
-            .typewriter-text {
-                font-size: 2em;
+            :root {
+                --h1-size: 3em;
             }
             
-            .resume-prompt {
-                font-size: 1em;
-                margin-top: 20px;
-                gap: 10px;
+            #lead-content h1 {
+                padding-top: 0.6em;
+            }
+            
+            #lead-content h1::before {
+                font-size: 0.35em;
             }
             
             .resume-icon {
@@ -233,13 +272,22 @@
                 font-size: 16px;
             }
         }
+        
+        /* Extra small screens */
         @media screen and (max-width: 480px) {
-            .typewriter-text {
-                font-size: 1.5em;
+            :root {
+                --h1-size: 2.5em;
+            }
+            
+            #lead-content h1 {
+                padding-top: 0.5em;
+            }
+            
+            #lead-content h1::before {
+                font-size: 0.4em;
             }
             
             .resume-prompt {
-                font-size: 0.9em;
                 margin-top: 15px;
                 gap: 8px;
             }

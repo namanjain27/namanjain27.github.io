@@ -253,7 +253,7 @@
 
 
         /* Dark mode toggle styles */
-        .theme-toggle {
+        /* .theme-toggle {
             position: fixed;
             top: 20px;
             left: 20px;
@@ -274,9 +274,9 @@
         .theme-toggle:hover {
             background: rgba(255, 255, 255, 0.1);
         }
-        
+         */
         /* Mobile theme toggle alignment */
-        @media only screen and (max-width: 768px) {
+        /* @media only screen and (max-width: 768px) {
             .theme-toggle {
                 position: fixed;
                 top: 10px;
@@ -293,9 +293,9 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-            }
+            } */
             
-            .theme-toggle i {
+            /* .theme-toggle i {
                 font-size: 20px;
                 color: #3498db;
             }
@@ -304,7 +304,7 @@
                 background: #eee;
                 transform: none !important;
             }
-        }
+        } */
 
         /* Enhanced Dark mode styles with purple theme */
         body.dark-mode {
@@ -1514,77 +1514,90 @@
     <!-- End #about -->
     <div class="section-divider"></div>
 
-    <div id="experience" class="background-alt">
-        <h2 class="heading fade-in">Experience</h2>
-        <div id="experience-timeline">
-            <div data-date="July 2024 – July 2025" class="fade-in">
-                <h3>Ingram Micro</h3>
-                <span class="company-location">(Mumbai)</span>
-                <h4>Software Engineer</h4>
-                    <p>Built a robust cost update module for Vendors with cloud products, leveraging Java and Spring framework, PostgreSQL DBMS and Google Cloud Platform for storage.
-                        Devised a bulk data export feature using Google Cloud's BigQuery jobs and merge files using gsutil. 
-                        Have used elastic search for fast search over billions of rows of data. Employed multi-threading techniques and asynchronous processing in the catalog ingestion process for vendors.
-                    </p>
-            </div>
-
-            <div data-date="May 2023 - July 2023" class="fade-in">
-                <h3>LTIMindtree</h3>
-                <span class="company-location">(Hyderabad)</span>
-                <h4>Software Developer Intern (Received PPO)</h4>
-                <p>
-                    Developed AI features for a chatbot used by BU heads for IP & patent management, using Microsoft Bot Framework SDK and Azure Cognitive AI services. Built a QnA generator in python that periodically extracts data from website into a structured dataset in tsv file. Employed Conversational Language Understanding model in MS Language Studio. 
-                </p>
-            </div>
-            <div data-date="May 2022 - July 2022" class="fade-in">
-                <h3>SURGE IITK 2022</h3>
-                <span class="company-location">(Kanpur)</span>
-                <h4>Research Intern</h4>
-                <p>
-                    Generated creep curve plots for α-β Titanium (Ti-6 Al-4) based high temperature alloys using mathematical models and ML techniques. Feature engineered 4 out of 7 variables through principal component analysis (PCA) and Pearson correlation. Tested multiple regression models to arrive at acceptable results.
-                </p>
-            </div>
-            <div data-date="June 2022 - July 2023" class="fade-in">
-                <h3>MatSoc – The Materials Society, IIT Kanpur</h3>
-                <span class="company-location">(Kanpur)</span>
-                <h4>Co-Founder & UG Convener</h4>
-                <p>Co-Founded a 600+ member Departmental Society to engage & promote MSE research & technology awareness. Headed a team of 20+ & organized Orientation, Farewell, 6 alumni talks & workshops, Research Scholars' Day.
-                    Formulated an annual structure of events, project proposals, society's financial budgeting structure and rules.
-                </p>
-            </div>
-
-            <div data-date="May 2022 - April 2023" class="fade-in">
-                <h3>Game Development Club, IIT Kanpur</h3>
-                <span class="company-location">(Kanpur)</span>
-                <h4>Coordinator</h4>
-                <p>Leading a 3-tier team of 40+ members to foster Game Development by organizing game jams, workshops & projects.
-                    Mentored multiple specialized projects on Gamification, Augmented Reality & AI games using Unity Game Engine.
-                    Promoted GameDev, IITK stature from society to club in SnT Council, organized Bootcamp for 1200+ students with 4 workshops.
-                </p>
-            </div>
-
-
-        </div>
-    </div>
-    <!-- End #experience -->
-    <div class="section-divider"></div>
-
-    <div id="education">
-        <h2 class="heading fade-in">Education</h2>
-        <div class="education-block fade-in">
-            <h3>Indian Institute of Technology Kanpur</h3>
-            <span class="education-date">2020 - 2024</span>
-            <h4>Bachelor of Technology</h4>
-        </div>
-        <!-- End .education-block -->
-    </div>
-    <!-- End #education -->
-    <div class="section-divider"></div>
-
-    <div id="projects" class="background-alt">
+	 <div id="projects" class="background-alt">
         <h2 class="heading fade-in">Projects</h2>
         <div class="container">
             <div class="projects-grid">
-                
+
+				
+				
+                <div class="project fade-in">
+                    <button class="project-toggle" aria-label="Toggle project details">
+                        <i class="fa fa-info-circle"></i>
+                    </button>
+                    <div class="project-image">
+                        <img src="images\workflow.png" alt="claim verifier agent"/>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-details" style="display: none;">
+                            <div class="tech-stack">
+                                <span class="tech-icon">
+                                    <img src="https://img.icons8.com/color/48/python.png" alt="Python"/>
+                                    Python
+                                </span>
+                                <span class="tech-icon">
+                                    <img src="https://img.icons8.com/?size=48&id=9sb4Tguermmj&format=png&color=000000" alt="LangGraph"/>
+                                    LangGraph
+                                </span>
+                                <span class="tech-icon">
+                                    <img src="https://img.icons8.com/?size=48&id=EvhyZpKOoV4z&format=png&color=000000" alt="LangChain"/>
+                                    LangChain
+                                </span>
+                            </div>
+                            <p>
+                                A multi-agent AI workflow that analyses intent, generates report, fetches user/policy data from ERP, makes best decision for claim resolution through a confidence score with human fallback via ticket creation. 
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <h3>BFSI claim verifier agent</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/namanjain27/bfsi-copilot">View Project</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+ 				<div class="project fade-in">
+                    <button class="project-toggle" aria-label="Toggle project details">
+                        <i class="fa fa-info-circle"></i>
+                    </button>
+                    <div class="project-image">
+                        <img src="images\rms.png" alt="claim verifier agent"/>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-details" style="display: none;">
+                            <div class="tech-stack">
+                                <span class="tech-icon">
+                                    <img src="https://img.icons8.com/color/48/python.png" alt="Python"/>
+                                    Python
+                                </span>
+								<span class="tech-icon">
+                                    <img src="https://img.icons8.com/color/48/deer.png" alt="llm model"/>
+                                    Llama 3.3-8b Model
+                                </span>
+								<span class="tech-icon">
+                                    <img src="https://img.icons8.com/color/48/database.png" alt="database"/>
+                                    Sqlite
+                                </span>
+								<span class="tech-icon">
+                                    <img src="https://img.icons8.com/color/48/streamlit.png" alt="UI"/>
+                                    Streamlit
+                                </span>
+                            </div>
+                            <p>
+                                Conversational agent that uses multi-agent architecture (intent detection, tool execution, and chat) to handle natural language queries for finding availability, making reservation changes, join waitlist. All agents built from scratch, prompt-engineering, context mgmt. 
+                            </p>
+                        </div>
+                        <div class="project-footer">
+                            <h3>RestroPilot - AI Reservation Management System</h3>
+                            <div class="project-links">
+                                <a href="https://github.com/namanjain27/restaurant-reservation-agent">View Project</a>
+								<a href="https://www.loom.com/share/b41c0da5c7904e2596d23fc7733bb360" class="secondary">View Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
                 <div class="project fade-in">
                     <button class="project-toggle" aria-label="Toggle project details">
                         <i class="fa fa-info-circle"></i>
@@ -1661,11 +1674,14 @@
                             <h3>TrackX – Personal Finance Management App</h3>
                             <div class="project-links">
                                 <a href="https://github.com/namanjain27/expense-tracker">View Project</a>
+								<a href="https://www.loom.com/share/25dc8bb99a7d4a089f0f2bdad4b1a72d" class="secondary">View Demo</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
+
+				
                 <div class="project fade-in">
                     <button class="project-toggle" aria-label="Toggle project details">
                         <i class="fa fa-info-circle"></i>
@@ -1701,12 +1717,12 @@
                             <h3>Territorial Attack – Android Game</h3>
                             <div class="project-links">
                                 <a href="https://github.com/namanjain27/Territorial-Attack">View Project</a>
-                                <a href="https://play.google.com/store/apps/details?id=com.DefaultCompany.TerritorialAttack" class="secondary">Play Store</a>
+                                <a href="https://studiocentauri.itch.io/territorial-attack" class="secondary">Play Game</a>
                             </div>
                         </div>
                     </div>
                 </div>
-
+<!-- 
                 <div class="project fade-in">
                     <button class="project-toggle" aria-label="Toggle project details">
                         <i class="fa fa-info-circle"></i>
@@ -1745,7 +1761,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
 
                 <div class="project fade-in">
@@ -1787,7 +1803,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="project fade-in">
+                <!-- <div class="project fade-in">
                     <button class="project-toggle" aria-label="Toggle project details">
                         <i class="fa fa-info-circle"></i>
                     </button>
@@ -1824,13 +1840,81 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
     <!-- End #projects -->
     <div class="section-divider"></div>
 
+	
+    <div id="experience" class="background-alt">
+        <h2 class="heading fade-in">Experience</h2>
+        <div id="experience-timeline">
+            <div data-date="July 2024 – July 2025" class="fade-in">
+                <h3>Ingram Micro</h3>
+                <span class="company-location">(Mumbai)</span>
+                <h4>Software Engineer</h4>
+                    <p>Built a robust cost update module for Vendors with cloud products, leveraging Java and Spring framework, PostgreSQL DBMS and Google Cloud Platform for storage.
+                        Devised a bulk data export feature using Google Cloud's BigQuery jobs and merge files using gsutil. 
+                        Have used elastic search for fast search over billions of rows of data. Employed multi-threading techniques and asynchronous processing in the catalog ingestion process for vendors.
+                    </p>
+            </div>
+
+            <div data-date="May 2023 - July 2023" class="fade-in">
+                <h3>LTIMindtree</h3>
+                <span class="company-location">(Hyderabad)</span>
+                <h4>Software Developer Intern (Received PPO)</h4>
+                <p>
+                    Developed AI features for a chatbot used by BU heads for IP & patent management, using Microsoft Bot Framework SDK and Azure Cognitive AI services. Built a QnA generator in python that periodically extracts data from website into a structured dataset in tsv file. Employed Conversational Language Understanding model in MS Language Studio. 
+                </p>
+            </div>
+            <div data-date="May 2022 - July 2022" class="fade-in">
+                <h3>SURGE IITK 2022</h3>
+                <span class="company-location">(Kanpur)</span>
+                <h4>Research Intern</h4>
+                <p>
+                    Generated creep curve plots for α-β Titanium (Ti-6 Al-4) based high temperature alloys using mathematical models and ML techniques. Feature engineered 4 out of 7 variables through principal component analysis (PCA) and Pearson correlation. Tested multiple regression models to arrive at acceptable results.
+                </p>
+            </div>
+            <div data-date="June 2022 - July 2023" class="fade-in">
+                <h3>MatSoc – The Materials Society, IIT Kanpur</h3>
+                <span class="company-location">(Kanpur)</span>
+                <h4>Co-Founder & UG Convener</h4>
+                <p>Co-Founded a 600+ member Departmental Society to engage & promote MSE research & technology awareness. Headed a team of 20+ & organized Orientation, Farewell, 6 alumni talks & workshops, Research Scholars' Day.
+                    Formulated an annual structure of events, project proposals, society's financial budgeting structure and rules.
+                </p>
+            </div>
+
+            <div data-date="May 2022 - April 2023" class="fade-in">
+                <h3>Game Development Club, IIT Kanpur</h3>
+                <span class="company-location">(Kanpur)</span>
+                <h4>Coordinator</h4>
+                <p>Leading a 3-tier team of 40+ members to foster Game Development by organizing game jams, workshops & projects.
+                    Mentored multiple specialized projects on Gamification, Augmented Reality & AI games using Unity Game Engine.
+                    Promoted GameDev, IITK stature from society to club in SnT Council, organized Bootcamp for 1200+ students with 4 workshops.
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- End #experience -->
+    <div class="section-divider"></div>
+
+    <div id="education">
+        <h2 class="heading fade-in">Education</h2>
+        <div class="education-block fade-in">
+            <h3>Indian Institute of Technology Kanpur</h3>
+            <span class="education-date">2020 - 2024</span>
+            <h4>Bachelor of Technology</h4>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+    <div class="section-divider"></div>
+
+   
     <div id="skills">
         <h2 class="heading fade-in">Skills</h2>
         <ul class="fade-in">
@@ -2143,112 +2227,112 @@
         }
     });
     
-    // Enhanced contact form submission handling
-    const contactForm = document.querySelector('#contact-form form');
-    const submitButton = contactForm.querySelector('button[type="submit"]');
-    const originalButtonText = submitButton.textContent;
+    // // Enhanced contact form submission handling
+    // const contactForm = document.querySelector('#contact-form form');
+    // const submitButton = contactForm.querySelector('button[type="submit"]');
+    // const originalButtonText = submitButton.textContent;
     
-    // Create loading spinner
-    function createLoadingSpinner() {
-        const spinner = document.createElement('div');
-        spinner.innerHTML = `
-            <style>
-                .spinner {
-                    display: inline-block;
-                    width: 20px;
-                    height: 20px;
-                    border: 2px solid rgba(255,255,255,0.3);
-                    border-radius: 50%;
-                    border-top-color: white;
-                    animation: spin 1s ease-in-out infinite;
-                    margin-right: 10px;
-                }
-                @keyframes spin {
-                    to { transform: rotate(360deg); }
-                }
-            </style>
-            <span class="spinner"></span>
-        `;
-        return spinner.querySelector('.spinner');
-    }
+    // // Create loading spinner
+    // function createLoadingSpinner() {
+    //     const spinner = document.createElement('div');
+    //     spinner.innerHTML = `
+    //         <style>
+    //             .spinner {
+    //                 display: inline-block;
+    //                 width: 20px;
+    //                 height: 20px;
+    //                 border: 2px solid rgba(255,255,255,0.3);
+    //                 border-radius: 50%;
+    //                 border-top-color: white;
+    //                 animation: spin 1s ease-in-out infinite;
+    //                 margin-right: 10px;
+    //             }
+    //             @keyframes spin {
+    //                 to { transform: rotate(360deg); }
+    //             }
+    //         </style>
+    //         <span class="spinner"></span>
+    //     `;
+    //     return spinner.querySelector('.spinner');
+    // }
     
-    // Show form message
-    function showFormMessage(message, type) {
-        // Remove existing message
-        const existingMessage = contactForm.parentNode.querySelector('.form-message');
-        if (existingMessage) {
-            existingMessage.remove();
-        }
+    // // Show form message
+    // function showFormMessage(message, type) {
+    //     // Remove existing message
+    //     const existingMessage = contactForm.parentNode.querySelector('.form-message');
+    //     if (existingMessage) {
+    //         existingMessage.remove();
+    //     }
         
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `form-message form-${type}`;
-        messageDiv.textContent = message;
-        contactForm.parentNode.appendChild(messageDiv);
+    //     const messageDiv = document.createElement('div');
+    //     messageDiv.className = `form-message form-${type}`;
+    //     messageDiv.textContent = message;
+    //     contactForm.parentNode.appendChild(messageDiv);
         
-        // Auto-remove after 5 seconds
-        setTimeout(() => {
-            if (messageDiv.parentNode) {
-                messageDiv.style.opacity = '0';
-                messageDiv.style.transform = 'translateY(-20px)';
-                setTimeout(() => messageDiv.remove(), 300);
-            }
-        }, 5000);
-    }
+    //     // Auto-remove after 5 seconds
+    //     setTimeout(() => {
+    //         if (messageDiv.parentNode) {
+    //             messageDiv.style.opacity = '0';
+    //             messageDiv.style.transform = 'translateY(-20px)';
+    //             setTimeout(() => messageDiv.remove(), 300);
+    //         }
+    //     }, 5000);
+    // }
     
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+    // contactForm.addEventListener('submit', async (e) => {
+    //     e.preventDefault();
         
-        // Add loading state
-        const spinner = createLoadingSpinner();
-        submitButton.disabled = true;
-        submitButton.style.opacity = '0.7';
-        submitButton.style.cursor = 'not-allowed';
-        submitButton.insertBefore(spinner, submitButton.firstChild);
-        submitButton.innerHTML = spinner.outerHTML + 'Sending...';
+    //     // Add loading state
+    //     const spinner = createLoadingSpinner();
+    //     submitButton.disabled = true;
+    //     submitButton.style.opacity = '0.7';
+    //     submitButton.style.cursor = 'not-allowed';
+    //     submitButton.insertBefore(spinner, submitButton.firstChild);
+    //     submitButton.innerHTML = spinner.outerHTML + 'Sending...';
         
-        try {
-            const formData = new FormData(contactForm);
-            const response = await fetch(contactForm.action, {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
+    //     try {
+    //         const formData = new FormData(contactForm);
+    //         const response = await fetch(contactForm.action, {
+    //             method: 'POST',
+    //             body: formData,
+    //             headers: {
+    //                 'Accept': 'application/json'
+    //             }
+    //         });
             
-            if (response.ok) {
-                showFormMessage('Thank you! Your message has been sent successfully.', 'success');
-                contactForm.reset();
+    //         if (response.ok) {
+    //             showFormMessage('Thank you! Your message has been sent successfully.', 'success');
+    //             contactForm.reset();
                 
-                // Success animation
-                submitButton.style.background = 'rgba(76, 175, 80, 0.3)';
-                submitButton.style.borderColor = 'rgba(76, 175, 80, 0.5)';
-                setTimeout(() => {
-                    submitButton.style.background = '';
-                    submitButton.style.borderColor = '';
-                }, 2000);
-            } else {
-                throw new Error('Form submission failed');
-            }
-        } catch (error) {
-            console.error('Form submission error:', error);
-            showFormMessage('Sorry, there was an error sending your message. Please try again.', 'error');
+    //             // Success animation
+    //             submitButton.style.background = 'rgba(76, 175, 80, 0.3)';
+    //             submitButton.style.borderColor = 'rgba(76, 175, 80, 0.5)';
+    //             setTimeout(() => {
+    //                 submitButton.style.background = '';
+    //                 submitButton.style.borderColor = '';
+    //             }, 2000);
+    //         } else {
+    //             throw new Error('Form submission failed');
+    //         }
+    //     } catch (error) {
+    //         console.error('Form submission error:', error);
+    //         showFormMessage('Sorry, there was an error sending your message. Please try again.', 'error');
             
-            // Error animation
-            submitButton.style.background = 'rgba(244, 67, 54, 0.3)';
-            submitButton.style.borderColor = 'rgba(244, 67, 54, 0.5)';
-            setTimeout(() => {
-                submitButton.style.background = '';
-                submitButton.style.borderColor = '';
-            }, 2000);
-        } finally {
-            // Reset button state
-            submitButton.disabled = false;
-            submitButton.style.opacity = '';
-            submitButton.style.cursor = '';
-            submitButton.textContent = originalButtonText;
-        }
-    });
+    //         // Error animation
+    //         submitButton.style.background = 'rgba(244, 67, 54, 0.3)';
+    //         submitButton.style.borderColor = 'rgba(244, 67, 54, 0.5)';
+    //         setTimeout(() => {
+    //             submitButton.style.background = '';
+    //             submitButton.style.borderColor = '';
+    //         }, 2000);
+    //     } finally {
+    //         // Reset button state
+    //         submitButton.disabled = false;
+    //         submitButton.style.opacity = '';
+    //         submitButton.style.cursor = '';
+    //         submitButton.textContent = originalButtonText;
+    //     }
+    // });
 
     // Project toggle functionality
     function initProjectToggles() {

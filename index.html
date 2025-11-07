@@ -357,14 +357,26 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            transition: all 0.3s ease;
         }
         
         footer .social a svg {
             transition: all 0.3s ease;
         }
         
+        footer .social a i {
+            transition: all 0.3s ease;
+        }
+        
         footer .social a:hover svg {
             transform: scale(1.2);
+            filter: drop-shadow(0 0 8px rgba(32, 178, 170, 0.6));
+        }
+        
+        footer .social a:hover i {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 8px rgba(32, 178, 170, 0.6));
+            text-shadow: 0 0 10px rgba(32, 178, 170, 0.8);
         }
 
         body.dark-mode .theme-toggle i {
@@ -1017,6 +1029,29 @@
             color: #fff;
         }
         
+        /* Force light mode theme for floating social widget regardless of dark mode */
+        body.dark-mode .floating-social-widget .social-icon-wrapper {
+            background: rgba(255, 255, 255, 0.1) !important;
+            backdrop-filter: blur(10px) !important;
+            border: 2px solid rgba(32, 178, 170, 0.3) !important;
+        }
+        
+        body.dark-mode .floating-social-widget .social-icon-wrapper:hover {
+            background: var(--gradient-primary) !important;
+            border-color: rgba(32, 178, 170, 0.8) !important;
+            box-shadow: 
+                0 8px 25px rgba(32, 178, 170, 0.4),
+                0 0 30px rgba(32, 178, 170, 0.2) !important;
+        }
+        
+        body.dark-mode .floating-social-widget .social-icon-wrapper a {
+            color: #fff !important;
+        }
+        
+        body.dark-mode .floating-social-widget .social-icon-wrapper:hover a {
+            color: #fff !important;
+        }
+        
         /* Mobile responsiveness */
         @media (max-width: 768px) {
             .floating-social-widget {
@@ -1100,11 +1135,11 @@
             }
         }
         
-        /* Mobile dark mode styling for floating social widget */
+        /* Mobile dark mode styling for floating social widget - force light mode */
         @media (max-width: 768px) {
             body.dark-mode .floating-social-widget {
-                background: rgba(45, 45, 45, 0.9);
-                border-color: rgba(32, 178, 170, 0.5);
+                background: rgba(255, 255, 255, 0.2) !important;
+                border-color: rgba(255, 255, 255, 0.3) !important;
             }
         }
         

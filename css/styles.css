@@ -270,7 +270,7 @@ footer {
   #lead-content h1 {
     color: #fff;
     font-weight: 900;
-    font-size: 5em;
+    font-size: 3.5em;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     line-height: 0.9em;
@@ -698,7 +698,7 @@ footer {
     height: auto;
     min-height: auto;
     max-height: auto;
-    padding: 100px 15px;
+    /* padding: 100px 15px; */
   }
   #lead-content {
     position: relative;
@@ -710,7 +710,7 @@ footer {
     display: none;
   }
   #app,#lead-content h1 {
-    font-size: 3em;
+    font-size: 2em;
   }
   #app,#lead-content h2 {
     font-size: 1.75em;
@@ -771,7 +771,7 @@ footer {
 }
 @media only screen and (max-width: 480px) {
   #lead-content h1 {
-    font-size: 1.5em;
+    font-size: 1.2em;
   }
   #lead-content h2 {
     font-size: 1em;

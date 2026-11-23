@@ -35,6 +35,11 @@ export const links: Contact[] = [
 
 export const projects: Item[] = [
   {
+    title: "Voice Note Interpreter — translate voice notes across 22 Indian languages",
+    meta: "ai",
+    href: "https://namanjain27.github.io/interpretor-indic/",
+  },
+  {
     title: "BFSI claim verifier — multi-agent claim resolution with human fallback",
     meta: "ai",
     href: "https://github.com/namanjain27/bfsi-copilot",

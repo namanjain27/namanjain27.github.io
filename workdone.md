@@ -68,3 +68,6 @@
 
 ## Sarvam role copy
 - Reworded the intro, Sarvam work description and meta description to cover the full FDE scope (client's single technical point of contact, end-to-end builds on Sarvam's stack), not just voice agents.
+
+## Voice Note Interpreter project
+- Added the Voice Note Interpreter (Sarvam-powered PWA) to the top of the projects list, linking to the live app.

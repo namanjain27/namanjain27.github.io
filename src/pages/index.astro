@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import Section from "../components/Section.astro";
+import ThemeToggle from "../components/ThemeToggle.astro";
+import { profile, links, projects, experience, campus } from "../data/site";
+import photo from "../assets/naman.jpg";
+
+const link = "slide-underline text-neutral-900 dark:text-neutral-100";
+---
+
+<Base>
+  <ThemeToggle />
+  <main class="flex min-h-screen justify-center">
+    <div class="w-full max-w-2xl space-y-6 px-5 py-6 lg:py-16">
+      <figure class="reveal h-44 w-44 overflow-hidden rounded-lg" style="--i:0">
+        <Image
+          src={photo}
+          alt={profile.name}
+          width={352}
+          height={352}
+          loading="eager"
+          fetchpriority="high"
+          class="h-full w-full object-cover object-top"
+        />
+      </figure>
+
+      <div class="reveal space-y-4 text-sm" style="--i:1">
+        <p class="leading-loose text-neutral-600 dark:text-neutral-400">
+          {/* Explicit {" "} keeps spaces around links; Astro's HTML compression strips line breaks. */}
+          Hi, I'm <span class="text-neutral-900 dark:text-neutral-100">Naman</span>. Currently at{" "}
+          <a href="https://sarvam.ai" target="_blank" rel="noopener noreferrer" class={link}>Sarvam AI</a>{" "}
+          as a Forward Deployed Engineer: the technical point of contact for clients, building complete
+          solutions end to end on Sarvam's APIs and stack. Previously
+          SDE at{" "}
+          <a href="https://www.ingrammicro.com" target="_blank" rel="noopener noreferrer" class={link}>Ingram Micro</a>{" "}
+          working on big data, and an IIT Kanpur '24 grad who led the GameDev Club.
+        </p>
+        <p class="leading-loose text-neutral-600 dark:text-neutral-400">
+          I like building AI products with LangGraph, multi-agent workflows and full-stack apps.
+        </p>
+        <p class="flex flex-wrap items-center gap-x-4 gap-y-2">
+          {
+            links.map((l) => (
+              <a
+                href={l.href}
+                class="group inline-flex items-center gap-1.5 text-neutral-900 dark:text-neutral-100"
+                {...(l.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+              >
+                <svg viewBox="0 0 24 24" class="h-3.5 w-3.5 shrink-0 fill-current opacity-70 transition-opacity group-hover:opacity-100" aria-hidden="true">
+                  <path d={l.icon} />
+                </svg>
+                <span class="slide-underline">{l.label}</span>
+              </a>
+            ))
+          }
+        </p>
+      </div>
+
+      <Section heading="Things I've Built" items={projects} index={2} />
+      <Section heading="Work" items={experience} index={3} />
+      <Section heading="At IIT Kanpur" items={campus} index={4} />
+    </div>
+  </main>
+</Base>

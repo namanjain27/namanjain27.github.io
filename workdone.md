@@ -54,3 +54,17 @@
 - **Interactive Timeline Icons**: Icons pulse with neon glow and react to hover with scale and rotation effects  
 - **Enhanced Hover Effects**: Dates change color and lift up, content slides right with shimmer effect
 - **Animated Timeline Line**: The vertical timeline line draws itself from top to bottom when visible
+## Redesign: minimal Astro site
+- Replaced the Bootstrap/gulp template with Astro + Tailwind; single-column minimal layout with profile photo, intro, links, and dotted-rail lists for projects, work and campus roles.
+- All content now lives in `src/data/site.ts`; added light/dark toggle and a GitHub Actions build via `withastro/action`.
+
+## Work descriptions, new photo, cursor, theme transition
+- Work and campus entries show their full original descriptions under each role; profile photo swapped for the closer crop.
+- Added Figma-style arrow cursors (inverted in dark mode) and a diagonal strip-flip light/dark transition via the View Transitions API (`src/scripts/theme-transition.ts`).
+
+## Expandable work rows, contact logos
+- Work and campus rows are now click-to-expand toggles with a rotating chevron and a smooth height animation.
+- Contact links show their logos (simple-icons + inline LinkedIn/mail paths); the Resume link is hidden but the PDF is still served.
+
+## Sarvam role copy
+- Reworded the intro, Sarvam work description and meta description to cover the full FDE scope (client's single technical point of contact, end-to-end builds on Sarvam's stack), not just voice agents.

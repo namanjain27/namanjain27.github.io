@@ -123,6 +123,10 @@
     -webkit-user-select: none;
     will-change: transform;
     visibility: hidden; /* shown once the script has placed it */
+    /* The drawing uses fixed colours; opt it out of any browser-applied
+       dark mode or forced colours so he looks the same in every theme. */
+    color-scheme: only light;
+    forced-color-adjust: none;
   }
   .mascot[data-ready] { visibility: visible; }
   .m-inner {

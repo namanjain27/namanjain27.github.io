@@ -10,6 +10,9 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Tells mobile browsers (Chrome/Samsung auto dark) the site has its own
+         dark theme, so they don't force-invert colours like the mascot's -->
+    <meta name="color-scheme" content="light dark" />
     <title>{profile.name}</title>
     <meta name="description" content={profile.description} />
     <meta name="author" content={profile.name} />

@@ -79,3 +79,7 @@
 ## Mascot + cursor tweaks
 - Mascot no longer clings to the window sides; hard throws just bounce off them.
 - Site cursors are 1.5x bigger with rounded corners; hovering the mascot shows an open hand, dragging shows a closed hand.
+
+## Mascot colours in mobile dark mode
+- Added `<meta name="color-scheme" content="light dark">` so mobile browsers (Chrome/Samsung auto dark) stop force-inverting the page.
+- Mascot opts out of browser dark mode/forced colours (`color-scheme: only light`), so his colours stay the same in every theme.

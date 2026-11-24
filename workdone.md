@@ -71,3 +71,11 @@
 
 ## Voice Note Interpreter project
 - Added the Voice Note Interpreter (Sarvam-powered PWA) to the top of the projects list, linking to the live app.
+
+## Page mascot (mini cartoon of Naman)
+- Added an SVG chibi of Naman (`src/components/Mascot.astro`) with moods: happy, wink, surprised, dizzy, sleep, plus blinking and cursor-following eyes.
+- `src/scripts/mascot.ts` makes him sit on text lines, the photo, list rows and window edges, hop to a visible spot on scroll, wander/wave/doze when idle, and react to click, drag, throw (bounce, wall-cling, dizzy landings).
+
+## Mascot + cursor tweaks
+- Mascot no longer clings to the window sides; hard throws just bounce off them.
+- Site cursors are 1.5x bigger with rounded corners; hovering the mascot shows an open hand, dragging shows a closed hand.

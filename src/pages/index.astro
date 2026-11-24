@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import Base from "../layouts/Base.astro";
 import Section from "../components/Section.astro";
 import ThemeToggle from "../components/ThemeToggle.astro";
+import Mascot from "../components/Mascot.astro";
 import { profile, links, projects, experience, campus } from "../data/site";
 import photo from "../assets/naman.jpg";
 
@@ -11,6 +12,7 @@ const link = "slide-underline text-neutral-900 dark:text-neutral-100";
 
 <Base>
   <ThemeToggle />
+  <Mascot />
   <main class="flex min-h-screen justify-center">
     <div class="w-full max-w-2xl space-y-6 px-5 py-6 lg:py-16">
       <figure class="reveal h-44 w-44 overflow-hidden rounded-lg" style="--i:0">
